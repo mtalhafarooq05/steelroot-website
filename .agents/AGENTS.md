@@ -30,3 +30,9 @@ When generating or modifying UI components for this workspace, strictly adhere t
 - **Avoid VRAM Overloads:** Never combine `transform-style: preserve-3d` with heavy filters (like `drop-shadow()` or `blur()`) on multiple animating elements simultaneously. This combination causes severe compositor layer explosions in Chromium browsers.
 - **Backdrop Filters:** Do not apply `backdrop-filter` to arrays of overlapping, animated background elements (e.g., particle systems).
 - **Strict Selectors:** When using `preserve-3d` or intensive filters, target specific single element IDs (e.g., `#hero-logo`) rather than generic tag selectors (e.g., `img` or `.hero-full img`). This prevents dynamically generated DOM elements from accidentally inheriting heavy rendering properties and crashing the page.
+
+## 6. Content & Copywriting Guidelines
+- **Brand Name:** Always write the studio name as "**SteelRoot**" without any spaces when used in text or UI elements (e.g., in the navbar).
+- **Target Audience (B2B Focus):** All website copy should be tailored toward B2B game development services (e.g., building games from scratch, fixing broken code, refactoring complex systems). Do NOT write copy aimed at players (e.g., appealing moderation actions, reporting bugs).
+- **Writing Style:** Keep all descriptions and text simple, direct, and human-sounding. Avoid "high-fi" vocabulary, overly complex phrasing, or corporate jargon that feels AI-generated.
+- **Front Page Layout:** The featured carousel/showcase on the home page must *exclusively* contain actual Games. Do not put development "Systems," "Plugins," or other technical assets on the front page.
