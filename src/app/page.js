@@ -142,7 +142,7 @@ export default function Home() {
         <header className="hero-full" id="hero-section" ref={heroRef}>
           <svg id="wind-container" ref={windContainerRef} style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', pointerEvents: 'none', overflow: 'hidden', opacity: 0.15, zIndex: 0 }}></svg>
           <img src="/Studio Stuff/MainLogo.png" alt="Steel Root Studios" id="hero-logo" style={{ position: 'relative', zIndex: 2 }} />
-          <Link href="/projects" className="btn" style={{ zIndex: 10, position: 'relative' }}>PLAY RADISH RUMBLE</Link>
+          <Link href="/projects" className="btn" style={{ zIndex: 10, position: 'relative', marginBottom: '80px' }}>PLAY RADISH RUMBLE</Link>
           <div className="scroll-indicator" style={{ zIndex: 10 }}>▼ SCROLL TO EXPLORE ▼</div>
         </header>
 
