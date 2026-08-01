@@ -72,7 +72,7 @@ export default function ContactPage() {
             <div className="contact-card">
                 <img src="/Studio Stuff/MainIcon.png" alt="Mascot" style={{ height: '140px', marginBottom: '2rem', filter: 'drop-shadow(6px 6px 0 var(--border-color))' }} className="float-anim" />
                 
-                <p style={{ fontSize: '1.5rem', fontWeight: 700, marginBottom: '3rem', lineHeight: 1.6 }}>Whether you are looking to report a bug, appeal a moderation action, or just want to hang out with our community, you're in the right place!</p>
+                <p style={{ fontSize: '1.5rem', fontWeight: 700, marginBottom: '3rem', lineHeight: 1.6 }}>We specialize in creating, fixing, and optimizing Roblox games. Whether you need a custom system built, code refactored, or a full game developed—you're in the right place!</p>
                 
                 <div style={{ display: 'flex', gap: '2rem', justifyContent: 'center', flexWrap: 'wrap' }}>
                     <a href="https://discord.com/invite/acuskPh3Cb" target="_blank" className="contact-btn">
