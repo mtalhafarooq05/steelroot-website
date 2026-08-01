@@ -181,41 +181,41 @@ export default function Home() {
               
               <Link href="/projects" className="carousel-card">
                   <div className="card-img">
-                      <img src="https://i.ytimg.com/vi/UuWpD9MjaxM/maxresdefault.jpg" alt="Bike System" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                      <img src="https://tr.rbxcdn.com/180DAY-02e3d0421fe9a64be34b56a13ff7d8d2/500/280/Image/Jpeg/noFilter" alt="My Pizza Shop" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                   </div>
                   <div className="card-content">
-                      <h3 style={{ color: '#6a7985' }}>Bike System</h3>
-                      <p>A robust, physics-driven platformer bike system designed for precision and smooth handling.</p>
+                      <h3 style={{ color: '#6a7985' }}>🍕 My Pizza Shop</h3>
+                      <p>Build the pizza shop of your dreams! Make delicious pizzas, serve hungry customers, and hire workers.</p>
                   </div>
               </Link>
 
               <Link href="/projects" className="carousel-card">
                   <div className="card-img">
-                      <img src="https://i.ytimg.com/vi/Igqqaik668g/maxresdefault.jpg" alt="Parkour Movement" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                      <img src="https://tr.rbxcdn.com/180DAY-61976bdce1ddc5d265be77f1ed7cd433/500/280/Image/Jpeg/noFilter" alt="Choose A Song" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                   </div>
                   <div className="card-content">
-                      <h3 style={{ color: '#f57f17' }}>Parkour Movement</h3>
-                      <p>A clean and smooth parkour movement system with climbing and vaulting.</p>
+                      <h3 style={{ color: '#f57f17' }}>🎵 Choose A Song 🎵</h3>
+                      <p>Join the ultimate music showdown! Battle against other players to decide which song is better.</p>
                   </div>
               </Link>
 
               <Link href="/projects" className="carousel-card">
                   <div className="card-img">
-                      <img src="https://i.ytimg.com/vi/J_1b9B01XIA/maxresdefault.jpg" alt="Snooker System" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                      <img src="https://tr.rbxcdn.com/180DAY-649fa2ee7317bc92ff2f08eaa7c4d075/500/280/Image/Jpeg/noFilter" alt="Brainrot" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                   </div>
                   <div className="card-content">
-                      <h3 style={{ color: 'var(--secondary-green)' }}>Snooker System</h3>
-                      <p>A working snooker game system built with accurate ball physics and hit detection.</p>
+                      <h3 style={{ color: 'var(--secondary-green)' }}>[🗿] Be a Warrior for Brainrot!</h3>
+                      <p>Crash through massive pillars with your Giga-Hammer! Collect the legendary Brainrots for massive multipliers.</p>
                   </div>
               </Link>
               
               <Link href="/projects" className="carousel-card">
                   <div className="card-img">
-                      <img src="https://i.ytimg.com/vi/290vNrvdRnM/maxresdefault.jpg" alt="Chest Open Sample" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                      <img src="https://tr.rbxcdn.com/180DAY-95cad273751f059fcf5d9820c14bb49a/500/280/Image/Jpeg/noFilter" alt="Lock & Launch" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                   </div>
                   <div className="card-content">
-                      <h3 style={{ color: '#6a7985' }}>Chest Open Sample</h3>
-                      <p>A smooth animation and interaction system for opening loot chests.</p>
+                      <h3 style={{ color: '#6a7985' }}>🎮 Lock & Launch – Open Beta! 🚀</h3>
+                      <p>Jump into chaotic, cartoon-style missile battles where the goal is simple: hover, lock, and launch!</p>
                   </div>
               </Link>
 
