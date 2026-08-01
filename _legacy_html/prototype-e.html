@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype E - Studio Hybrid</title>
+    <style>
+        :root {
+            --bg-color: #0b0c10;
+            --panel-bg: #1f2833;
+            --accent: #66fcf1;
+            --text-main: #c5c6c7;
+            --text-bright: #ffffff;
+            --border-style: 2px solid var(--accent);
+        }
+        
+        body {
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Inter', system-ui, sans-serif;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* Top Navigation Bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 3rem;
+            background: rgba(11, 12, 16, 0.9);
+            border-bottom: 1px solid rgba(102, 252, 241, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .studio-logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--text-bright);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        .studio-logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            color: var(--text-bright);
+            margin: 0 0 1rem 0;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+            line-height: 1.6;
+        }
+
+        /* Bento Grid with Game UI Styling */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: 250px;
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--panel-bg);
+            border: 1px solid rgba(102, 252, 241, 0.2);
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
+        }
+
+        .card:hover {
+            border: var(--border-style);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(102, 252, 241, 0.1);
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(11,12,16,0.9) 100%);
+            z-index: 1;
+        }
+
+        .card-content {
+            z-index: 2;
+        }
+
+        .card-content h3 {
+            color: var(--text-bright);
+            margin: 0 0 0.5rem 0;
+            font-size: 1.5rem;
+        }
+
+        .card-content p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .large { grid-column: span 2; grid-row: span 2; }
+        .wide { grid-column: span 2; }
+
+        .nav-back-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            color: #000;
+            background: var(--accent);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: bold;
+            z-index: 100;
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+                grid-auto-rows: 200px;
+            }
+            .large, .wide {
+                grid-column: span 1;
+            }
+            .hero h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="nav-back-float">Back to Menu</a>
+    
+    <nav class="navbar">
+        <div class="studio-logo">Studio<span>X</span></div>
+        <div class="nav-links">
+            <a href="#">Games</a>
+            <a href="#">Team</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="hero">
+            <h1>Building Next-Gen Roblox Experiences</h1>
+            <p>We are a passionate team of developers, designers, and artists dedicated to pushing the boundaries of the Roblox engine.</p>
+        </section>
+
+        <section class="grid">
+            <div class="card large">
+                <div class="card-content">
+                    <h3>Project Vanguard</h3>
+                    <p>Flagship MMO • 10M+ Visits</p>
+                </div>
+            </div>
+            <div class="card wide">
+                <div class="card-content">
+                    <h3>Neon Arena</h3>
+                    <p>Fast-Paced FPS</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h3>Custom Engine Tech</h3>
+                    <p>Scripting Systems</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h3>World Building</h3>
+                    <p>Environment Art</p>
+                </div>
+            </div>
+            <div class="card wide">
+                <div class="card-content">
+                    <h3>Upcoming Title</h3>
+                    <p>In Development</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

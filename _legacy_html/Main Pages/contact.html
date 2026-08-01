@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Steel Root Studios</title>
+    <link rel="stylesheet" href="styles.css?v=4">
+    <style>
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .page-header {
+            padding: 180px 5% 60px 5%;
+            text-align: center;
+        }
+
+        .page-title {
+            font-size: 5rem;
+            margin: 0;
+            color: var(--hero-bg);
+            text-shadow: 4px 0px 0 #000, 3.7px 1.5px 0 #000, 2.8px 2.8px 0 #000, 1.5px 3.7px 0 #000, 0px 4px 0 #000, -1.5px 3.7px 0 #000, -2.8px 2.8px 0 #000, -3.7px 1.5px 0 #000, -4px 0px 0 #000, -3.7px -1.5px 0 #000, -2.8px -2.8px 0 #000, -1.5px -3.7px 0 #000, 0px -4px 0 #000, 1.5px -3.7px 0 #000, 2.8px -2.8px 0 #000, 3.7px -1.5px 0 #000; font-weight: 900;
+        }
+
+        .contact-card {
+            background: var(--panel-bg);
+            border: 8px solid var(--border-color);
+            border-radius: 30px;
+            padding: 4rem;
+            box-shadow: 16px 16px 0 var(--border-color);
+            margin-bottom: 8rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact-btn {
+            background: #5865F2; /* Discord Color */
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 1.2rem 2rem;
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.2rem;
+            border: 6px solid var(--border-color);
+            border-radius: 16px;
+            box-shadow: 6px 6px 0 var(--border-color);
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 8px 8px 0 var(--border-color);
+        }
+        
+        .contact-btn.roblox-btn {
+            background: var(--hero-bg);
+        }
+    </style>
+</head>
+<body>
+    
+    <nav class="navbar">
+        <a href="index.html" class="logo-placeholder">
+            <img src="../Studio Stuff/MainIcon.png" alt="Steel Root Logo" style="height: 40px; filter: brightness(0) invert(1);">
+            STEEL ROOT
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="project.html">Projects</a>
+            <a href="about.html">About</a>
+            <a href="contact.html" class="active">Contact</a>
+        </div>
+    </nav>
+
+    <div class="container page-header fade-in" style="padding-bottom: 2rem;">
+        <h1 class="page-title">GET IN TOUCH <img src="../Emoji Icon Pack/256px/Outline/Beaming face with smiling eyes 256.png" style="height: 1em; vertical-align: middle; margin-left: 10px; filter: drop-shadow(4px 4px 0 var(--border-color)); transform: rotate(15deg);"></h1>
+    </div>
+
+    <div class="container fade-in" style="max-width: 900px; text-align: center;">
+        
+        <div class="contact-card">
+            
+            <img src="../Studio Stuff/MainIcon.png" alt="Mascot" style="height: 140px; margin-bottom: 2rem; filter: drop-shadow(6px 6px 0 var(--border-color));" class="float-anim">
+            
+            <p style="font-size: 1.5rem; font-weight: 700; margin-bottom: 3rem; line-height: 1.6;">Whether you are looking to report a bug, appeal a moderation action, or just want to hang out with our community, you're in the right place!</p>
+            
+            <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
+                <a href="https://discord.com/invite/acuskPh3Cb" target="_blank" class="contact-btn">
+                    <img src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a69f118df70ad7828d4_icon_clyde_blurple_RGB.svg" alt="Discord" style="height: 30px; filter: brightness(0) invert(1);">
+                    Join Our Discord
+                </a>
+                
+                <a href="https://www.roblox.com/communities/15587611/SteelRoot-Studios#!/about" target="_blank" class="contact-btn roblox-btn">
+                    <img src="../Studio Stuff/MainIcon.png" alt="Roblox" style="height: 30px; filter: brightness(0) invert(1);">
+                    Official Roblox Group
+                </a>
+            </div>
+            
+            <p style="margin-top: 4rem; font-size: 1.2rem; font-weight: 900; color: var(--text-muted); border-top: 4px dashed var(--border-color); padding-top: 2rem; width: 100%;">For business inquiries, please message Steelixion directly on Discord.</p>
+        </div>
+        
+    </div>
+
+    <footer class="footer fade-in">
+        <div class="footer-links">
+            <a href="https://www.roblox.com/communities/15587611/SteelRoot-Studios#!/about" target="_blank">
+                <img src="../Studio Stuff/MainIcon.png" alt="Roblox" style="height: 30px; filter: brightness(0) invert(1);"> Roblox Group
+            </a>
+            <a href="https://discord.com/invite/acuskPh3Cb" target="_blank">
+                Discord Server
+            </a>
+        </div>
+        <p style="font-weight: 700; font-size: 1.2rem;">&copy; 2026 Steel Root Studios.</p>
+    </footer>
+
+    <script>
+        // Fade In Elements on Scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

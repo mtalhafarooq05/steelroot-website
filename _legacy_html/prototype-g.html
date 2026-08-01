@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype G - Steel Root Studios</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@600;800&display=swap');
+
+        :root {
+            /* Colors extracted from the Steel Root logo */
+            --bg-color: #26211f;       /* Very dark warm brown/grey */
+            --panel-bg: #38302c;       /* Slightly lighter brown for cards */
+            --primary-orange: #f58a1f; /* Vibrant logo orange */
+            --secondary-green: #8cc63f;/* Vibrant logo green */
+            --steel-grey: #e0e0e0;     /* Metallic plate grey */
+            --border-color: #110f0e;   /* Very dark outline */
+            --text-main: #f9f9f9;
+        }
+        
+        body {
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Nunito', sans-serif;
+            background-image: radial-gradient(circle at 50% 0%, #3e3632 0%, var(--bg-color) 70%);
+            overflow-x: hidden;
+        }
+
+        /* Top Bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 3rem;
+            background: var(--panel-bg);
+            border-bottom: 4px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .logo-placeholder {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Fredoka One', cursive;
+            font-size: 2rem;
+            color: var(--primary-orange);
+            text-shadow: 2px 2px 0px var(--border-color), -1px -1px 0 var(--border-color), 1px -1px 0 var(--border-color), -1px 1px 0 var(--border-color), 1px 1px 0 var(--border-color);
+            letter-spacing: 2px;
+        }
+
+        .logo-placeholder span.steel {
+            color: var(--steel-grey);
+            background: var(--border-color);
+            padding: 0 8px;
+            border-radius: 4px;
+            font-size: 1.5rem;
+            transform: rotate(-3deg);
+            display: inline-block;
+            text-shadow: none;
+            box-shadow: inset 0 2px 0 rgba(255,255,255,0.3);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: transform 0.2s, color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-green);
+            transform: translateY(-2px);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .hero h1 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 4.5rem;
+            color: var(--text-main);
+            margin: 0 0 1rem 0;
+            text-shadow: 4px 4px 0px var(--border-color);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 2rem auto;
+            color: var(--steel-grey);
+            font-weight: 600;
+        }
+
+        /* Cartoon/Game Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: 250px;
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--panel-bg);
+            border: 4px solid var(--border-color);
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1.5rem;
+            box-shadow: 0 10px 0 var(--border-color);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+        
+        .card:active {
+            transform: translateY(4px);
+            box-shadow: 0 2px 0 var(--border-color);
+        }
+
+        .card-img-placeholder {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: #2a2522;
+            z-index: 1;
+        }
+
+        .card-content {
+            z-index: 2;
+            background: var(--border-color);
+            margin: -1.5rem -1.5rem 0 -1.5rem;
+            padding: 1.5rem;
+            border-top: 4px solid var(--border-color);
+            border-radius: 0 0 16px 16px;
+        }
+
+        .card-content h3 {
+            font-family: 'Fredoka One', cursive;
+            color: var(--secondary-green);
+            margin: 0 0 0.5rem 0;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        .card-content p {
+            margin: 0;
+            font-size: 1rem;
+            color: var(--text-main);
+            font-weight: 800;
+        }
+
+        /* Accent variants */
+        .card:nth-child(even) .card-content h3 {
+            color: var(--primary-orange);
+        }
+
+        .large { grid-column: span 2; grid-row: span 2; }
+        .wide { grid-column: span 2; }
+
+        .nav-back-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            color: var(--border-color);
+            background: var(--secondary-green);
+            text-decoration: none;
+            padding: 12px 24px;
+            border: 4px solid var(--border-color);
+            border-radius: 12px;
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.1rem;
+            z-index: 100;
+            box-shadow: 0 6px 0 var(--border-color);
+            transition: transform 0.1s;
+        }
+        
+        .nav-back-float:hover {
+            transform: translateY(2px);
+            box-shadow: 0 4px 0 var(--border-color);
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+                grid-auto-rows: 200px;
+            }
+            .large, .wide {
+                grid-column: span 1;
+            }
+            .hero h1 { font-size: 3rem; }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="nav-back-float">MAIN MENU</a>
+    
+    <nav class="navbar">
+        <div class="logo-placeholder">
+            <span class="steel">STEEL</span> ROOT
+        </div>
+        <div class="nav-links">
+            <a href="#">Games</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="hero">
+            <h1>We Grow Fun.</h1>
+            <p>Steel Root Studios is a premier indie game studio dedicated to crafting vibrant, engaging, and unforgettable experiences on Roblox.</p>
+        </section>
+
+        <section class="grid">
+            <div class="card large">
+                <div class="card-img-placeholder"></div>
+                <div class="card-content">
+                    <h3>Radish Rumble</h3>
+                    <p>Over 5M Players Worldwide</p>
+                </div>
+            </div>
+            <div class="card wide">
+                <div class="card-img-placeholder"></div>
+                <div class="card-content">
+                    <h3>Upcoming Game</h3>
+                    <p>Secret Project</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img-placeholder"></div>
+                <div class="card-content">
+                    <h3>Environment Art</h3>
+                    <p>Colorful Worlds</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img-placeholder"></div>
+                <div class="card-content">
+                    <h3>UI & UX</h3>
+                    <p>Player Focused</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

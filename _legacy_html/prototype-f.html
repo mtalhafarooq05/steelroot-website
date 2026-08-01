@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype F - Cyber-Corp Studio</title>
+    <style>
+        :root {
+            --bg: #09090b;
+            --surface: #18181b;
+            --border: #27272a;
+            --text: #e4e4e7;
+            --text-muted: #a1a1aa;
+            --primary: #f97316; /* Hazard Orange */
+            --grid-color: rgba(255,255,255,0.03);
+        }
+        
+        body {
+            margin: 0;
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Courier New', Courier, monospace; /* Utilitarian vibe */
+            line-height: 1.5;
+            overflow-x: hidden;
+            background-image: 
+                linear-gradient(var(--grid-color) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+
+        /* Top Bar */
+        .header {
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(9, 9, 11, 0.8);
+            backdrop-filter: blur(5px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo::before {
+            content: '■';
+            font-size: 1rem;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 2rem;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .sys-status {
+            color: var(--primary);
+            font-size: 0.8rem;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            border-left: 2px solid var(--primary);
+            padding-left: 10px;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin: 0 0 2rem 0;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            max-width: 800px;
+        }
+
+        /* Asymmetrical Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 20px;
+            grid-auto-rows: minmax(150px, auto);
+        }
+
+        .panel {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            position: relative;
+            transition: all 0.2s;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .panel:hover {
+            border-color: var(--primary);
+            background: #1f1f23;
+        }
+        
+        /* Tech corner accents */
+        .panel::before, .panel::after {
+            content: '';
+            position: absolute;
+            width: 10px; height: 10px;
+            border: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+        .panel::before { top: -1px; left: -1px; border-top-color: var(--border); border-left-color: var(--border); }
+        .panel::after { bottom: -1px; right: -1px; border-bottom-color: var(--border); border-right-color: var(--border); }
+        
+        .panel:hover::before { border-top-color: var(--primary); border-left-color: var(--primary); }
+        .panel:hover::after { border-bottom-color: var(--primary); border-right-color: var(--primary); }
+
+        .panel.hero-panel { grid-column: span 8; grid-row: span 3; }
+        .panel.side-panel { grid-column: span 4; grid-row: span 2; }
+        .panel.small-panel { grid-column: span 4; grid-row: span 1; }
+
+        .panel-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .panel-title {
+            font-size: 1.5rem;
+            margin: 0;
+            color: var(--text);
+            font-family: system-ui, sans-serif;
+            font-weight: bold;
+        }
+
+        .nav-back-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            color: var(--bg);
+            background: var(--primary);
+            text-decoration: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            z-index: 100;
+            text-transform: uppercase;
+            font-family: system-ui, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="nav-back-float">Exit to Menu</a>
+    
+    <header class="header">
+        <div class="logo">Nexus Studios</div>
+        <div class="nav-links">
+            <a href="#">Operations (Games)</a>
+            <a href="#">Personnel (Team)</a>
+            <a href="#">Comms (Contact)</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="sys-status">System Online // Grid Active // Establishing Connection...</div>
+        <h1>Architects of High-Fidelity Virtual Worlds</h1>
+        
+        <div class="grid">
+            <div class="panel hero-panel">
+                <div class="panel-label">Project.01 // Live</div>
+                <h2 class="panel-title" style="font-size: 2.5rem; margin-top: auto;">Cyber-Heist</h2>
+                <div style="width: 100%; height: 60%; background: #27272a; margin-top: 1rem;">
+                    <!-- Placeholder for massive video -->
+                </div>
+            </div>
+            
+            <div class="panel side-panel">
+                <div class="panel-label">Core Tech</div>
+                <h2 class="panel-title">Custom Frameworks</h2>
+                <p style="color: var(--text-muted); font-family: system-ui, sans-serif;">Proprietary backend solutions built natively in Luau.</p>
+            </div>
+            
+            <div class="panel small-panel">
+                <div class="panel-label">Active Users</div>
+                <h2 class="panel-title" style="font-size: 2.5rem; color: var(--primary);">125,492</h2>
+            </div>
+            
+            <div class="panel small-panel" style="grid-column: span 6;">
+                <div class="panel-label">Project.02 // Beta</div>
+                <h2 class="panel-title">Wasteland Survival</h2>
+            </div>
+            
+            <div class="panel small-panel" style="grid-column: span 6;">
+                <div class="panel-label">Join Us</div>
+                <h2 class="panel-title">We are hiring Scripters</h2>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

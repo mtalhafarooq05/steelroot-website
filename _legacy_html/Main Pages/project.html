@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Projects - Steel Root Studios</title>
+    <link rel="stylesheet" href="styles.css?v=5">
+    <style>
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .page-header {
+            padding: 180px 5% 60px 5%;
+            text-align: center;
+        }
+
+        .page-title {
+            font-size: 5rem;
+            margin: 0;
+            color: var(--hero-bg);
+            text-shadow: 4px 0px 0 #000, 3.7px 1.5px 0 #000, 2.8px 2.8px 0 #000, 1.5px 3.7px 0 #000, 0px 4px 0 #000, -1.5px 3.7px 0 #000, -2.8px 2.8px 0 #000, -3.7px 1.5px 0 #000, -4px 0px 0 #000, -3.7px -1.5px 0 #000, -2.8px -2.8px 0 #000, -1.5px -3.7px 0 #000, 0px -4px 0 #000, 1.5px -3.7px 0 #000, 2.8px -2.8px 0 #000, 3.7px -1.5px 0 #000; font-weight: 900;
+        }
+
+        .page-subtitle {
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            margin-top: 1rem;
+            font-weight: 700;
+        }
+        
+        /* Grid filter animation */
+        .project-card {
+            transition: transform 0.2s, box-shadow 0.2s, opacity 0.4s ease, filter 0.4s ease;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar" id="main-nav">
+        <a href="index.html" class="logo-placeholder">
+            <img src="../Studio Stuff/MainIcon.png" alt="Steel Root Logo" style="height: 40px; filter: brightness(0) invert(1);">
+            STEEL ROOT
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="project.html" class="active">Projects</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <header class="page-header fade-in">
+        <h1 class="page-title">OUR TITLES <img src="../Emoji Icon Pack/256px/Outline/Star-struck 256.png" style="height: 1em; vertical-align: middle; margin-left: 10px; filter: drop-shadow(4px 4px 0 var(--border-color)); transform: rotate(15deg);"></h1>
+        <p class="page-subtitle">Check out our most popular experiences on Roblox.</p>
+    </header>
+
+    <div class="container fade-in">
+        <!-- Project Filters -->
+        <div class="project-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="games">Games</button>
+            <button class="filter-btn" data-filter="systems">Systems</button>
+            <button class="filter-btn" data-filter="models">Models</button>
+            <button class="filter-btn" data-filter="ui">UI</button>
+        </div>
+    </div>
+
+    <section class="projects-grid fade-in" id="projects-container">
+        
+        <!-- GAMES -->
+        <div class="project-card" data-category="games">
+            <div class="project-card-img">
+                <img src="https://tr.rbxcdn.com/180DAY-a64f70da20fc1e80ee76fe5d49c1be0a/512/512/Image/Png/noFilter" alt="Blox Fruits">
+            </div>
+            <div class="project-card-content">
+                <h3>Blox Fruits</h3>
+                <p>Become a master swordsman or a powerful blox fruit user as you train to become the strongest player to ever live.</p>
+                <a href="#" class="btn-play-card">PLAY NOW</a>
+            </div>
+        </div>
+
+        <div class="project-card" data-category="games">
+            <div class="project-card-img">
+                <img src="https://tr.rbxcdn.com/180DAY-2256f921efa303aa6488b35b33d75ce0/512/512/Image/Png/noFilter" alt="Brookhaven">
+            </div>
+            <div class="project-card-content">
+                <h3>Brookhaven RP</h3>
+                <p>A place to hang out with like-minded people and roleplay in a beautiful city setting. Own amazing houses and vehicles!</p>
+                <a href="#" class="btn-play-card">PLAY NOW</a>
+            </div>
+        </div>
+
+        <div class="project-card" data-category="games">
+            <div class="project-card-img">
+                <img src="https://tr.rbxcdn.com/180DAY-29023c3f115f5eac513c836ef674fd42/512/512/Image/Png/noFilter" alt="Arsenal">
+            </div>
+            <div class="project-card-content">
+                <h3>Arsenal</h3>
+                <p>Race to the top through a massive arsenal of weapons! Conquer the day in fast-paced arcade gameplay.</p>
+                <a href="#" class="btn-play-card">PLAY NOW</a>
+            </div>
+        </div>
+
+        <!-- SYSTEMS -->
+        <div class="project-card" data-category="systems">
+            <div class="project-card-img">
+                <img src="https://tr.rbxcdn.com/180DAY-f5dc501881f5a8128689b14eab0213e5/512/512/Image/Png/noFilter" alt="Advanced Combat System">
+            </div>
+            <div class="project-card-content">
+                <h3>Advanced Combat</h3>
+                <p>A robust, modular melee and ranged combat system featuring hitboxes, stuns, combos, and replication optimization.</p>
+                <a href="#" class="btn-play-card">VIEW SYSTEM</a>
+            </div>
+        </div>
+
+        <div class="project-card" data-category="systems">
+            <div class="project-card-img">
+                <img src="https://tr.rbxcdn.com/180DAY-468c4a0429ba9a5d0eb990a79a86b003/512/512/Image/Png/noFilter" alt="Vehicle Physics">
+            </div>
+            <div class="project-card-content">
+                <h3>Vehicle Chassis V2</h3>
+                <p>A completely custom physics-based vehicle chassis featuring drift mechanics, suspension, and reliable network sync.</p>
+                <a href="#" class="btn-play-card">VIEW SYSTEM</a>
+            </div>
+        </div>
+
+        <!-- MODELS -->
+        <div class="project-card" data-category="models">
+            <div class="project-card-img">
+                <img src="https://t4.rbxcdn.com/180DAY-d111e601a049bc036dbee4dd47894778" alt="Low Poly City">
+            </div>
+            <div class="project-card-content">
+                <h3>Low-Poly City Pack</h3>
+                <p>A massive pack of stylized low-poly buildings, props, and nature assets optimized for mobile performance.</p>
+                <a href="#" class="btn-play-card">VIEW MODELS</a>
+            </div>
+        </div>
+        
+        <div class="project-card" data-category="models">
+            <div class="project-card-img">
+                <!-- Using another top game thumbnail as a placeholder for a model -->
+                <img src="https://tr.rbxcdn.com/180DAY-50c7cdce8d5b8398eb326ec588e330be/512/512/Image/Png/noFilter" alt="Sci-Fi Weapons">
+            </div>
+            <div class="project-card-content">
+                <h3>Sci-Fi Weapons Pack</h3>
+                <p>High-quality hard surface models for sci-fi blasters, swords, and gadgets with separated parts for animation.</p>
+                <a href="#" class="btn-play-card">VIEW MODELS</a>
+            </div>
+        </div>
+
+        <!-- UI -->
+        <div class="project-card" data-category="ui">
+            <div class="project-card-img">
+                <!-- Using another top game thumbnail as a placeholder for UI -->
+                <img src="https://tr.rbxcdn.com/180DAY-3f820bf302d99d25514f494f1fcb680f/512/512/Image/Png/noFilter" alt="Cartoon Shop UI">
+            </div>
+            <div class="project-card-content">
+                <h3>Cartoon Shop UI</h3>
+                <p>A vibrant, bouncy, tween-animated shop interface designed for simulator and pet-collection games.</p>
+                <a href="#" class="btn-play-card">VIEW UI</a>
+            </div>
+        </div>
+
+        <div class="project-card" data-category="ui">
+            <div class="project-card-img">
+                <img src="https://tr.rbxcdn.com/180DAY-8386121f00885f81f182fc600dbdbb78/512/512/Image/Png/noFilter" alt="Sci-Fi HUD">
+            </div>
+            <div class="project-card-content">
+                <h3>Minimalist Sci-Fi HUD</h3>
+                <p>A sleek, dark-themed Heads Up Display with glowing accents, health bars, radar, and responsive scaling.</p>
+                <a href="#" class="btn-play-card">VIEW UI</a>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Margin before footer -->
+    <div style="height: 100px;"></div>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="https://www.roblox.com/communities/15587611/SteelRoot-Studios#!/about" target="_blank">
+                <img src="../Studio Stuff/MainIcon.png" alt="Roblox" style="height: 30px; filter: brightness(0) invert(1);"> Roblox Group
+            </a>
+            <a href="https://discord.com/invite/acuskPh3Cb" target="_blank">
+                Discord Server
+            </a>
+        </div>
+        <p style="font-weight: 700; font-size: 1.2rem;">&copy; 2026 Steel Root Studios.</p>
+    </footer>
+
+    <script>
+        // Fade In Elements on Scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Category Filtering Logic
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button state
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                // Filter cards with a smooth hide/show effect
+                projectCards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.style.display = 'flex';
+                        // Tiny timeout to allow display:flex to apply before opacity transition
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.filter = 'saturate(1)';
+                            card.style.transform = 'scale(1)';
+                        }, 10);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.filter = 'saturate(0)';
+                        card.style.transform = 'scale(0.9)';
+                        setTimeout(() => {
+                            if (!card.classList.contains('active-animating')) {
+                                card.style.display = 'none';
+                            }
+                        }, 400); // Matches CSS transition time
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

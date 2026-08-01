@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steel Root Studios</title>
+    <link rel="stylesheet" href="styles.css?v=4">
+    <style>
+        /* Specific animations for the landing page */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Transparent navbar at top */
+        .navbar.transparent {
+            background: transparent;
+            border-bottom-color: transparent;
+        }
+
+        /* Cartoon Wind Effects */
+        #wind-container {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            width: 100%; height: 100%;
+            z-index: 1; /* Behind main logo */
+            pointer-events: none;
+        }
+        .wind-line {
+            fill: none;
+            stroke: rgba(255, 255, 255, 0.15); /* Much more transparent */
+            stroke-linecap: round;
+            stroke-dasharray: 25 200; /* Swoosh length is 25% of the path */
+            stroke-dashoffset: 25;    /* Starts hidden off the left side */
+            animation: windBlow linear forwards;
+            /* Removed shadow entirely */
+        }
+        @keyframes windBlow {
+            0% { stroke-dashoffset: 25; }
+            100% { stroke-dashoffset: -100; } /* Moves completely off the right side */
+        }
+        
+        #hero-logo {
+            z-index: 10;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    
+    <nav class="navbar transparent" id="main-nav">
+        <a href="index.html" class="logo-placeholder">
+            <img src="../Studio Stuff/MainIcon.png" alt="Steel Root Logo" style="height: 40px; filter: brightness(0) invert(1);">
+            STEEL ROOT
+        </a>
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="project.html">Projects</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Concept X: 100vh Full-Screen Welcome -->
+    <!-- Concept X: 100vh Full-Screen Welcome -->
+    <header class="hero-full" id="hero-section">
+        
+        <!-- Canvas for SVG Cartoon Wind -->
+        <svg id="wind-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; overflow: hidden; opacity: 0.15; z-index: 0;"></svg>
+
+        <!-- Floating Logo restored and pushed to front -->
+        <img src="../Studio Stuff/MainLogo.png" alt="Steel Root Studios" id="hero-logo" style="position: relative; z-index: 2;">
+        
+        <!-- Primary Call to Action -->
+        <a href="project.html" class="btn" style="z-index: 10; position: relative;">PLAY RADISH RUMBLE</a>
+        
+        <!-- Animated Scroll Hint -->
+        <div class="scroll-indicator" style="z-index: 10;">▼ SCROLL TO EXPLORE ▼</div>
+    </header>
+
+    <section class="games-section">
+        <h2 class="section-title fade-in">OUR GAMES <img src="../Emoji Icon Pack/256px/Outline/Star-struck 256.png" style="height: 1em; vertical-align: middle; margin-left: 10px; filter: drop-shadow(2px 2px 0 var(--border-color));"></h2>
+        
+        <div class="carousel-wrapper fade-in">
+            <button id="scroll-left" class="carousel-arrow left-arrow">
+                <img src="../Free Icon Pack v3.1 (Basic)/Free Icon Pack v3.1 (Basic)/Main/Upgrade/64px/Upgrade White 64px.png" alt="Left" style="width: 32px; height: 32px; transform: rotate(-90deg);">
+            </button>
+            <button id="scroll-right" class="carousel-arrow right-arrow">
+                <img src="../Free Icon Pack v3.1 (Basic)/Free Icon Pack v3.1 (Basic)/Main/Upgrade/64px/Upgrade White 64px.png" alt="Right" style="width: 32px; height: 32px; transform: rotate(90deg);">
+            </button>
+
+            <div class="carousel-container" id="games-carousel">
+            
+            <a href="project.html" class="carousel-card">
+                <div class="card-img">
+                    <img src="https://tr.rbxcdn.com/180DAY-2cf83c4be47fff668ee9b719908ad473/500/280/Image/Jpeg/noFilter" alt="Better Music" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                </div>
+                <div class="card-content">
+                    <h3 style="color: var(--primary-orange);">Better Music</h3>
+                    <p>Fight for your favorite song in this musical brawler!</p>
+                </div>
+            </a>
+            
+            <a href="project.html" class="carousel-card">
+                <div class="card-img">
+                    <img src="https://tr.rbxcdn.com/180DAY-f5dc501881f5a8128689b14eab0213e5/512/512/Image/Png/noFilter" alt="Adopt Me!" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                </div>
+                <div class="card-content">
+                    <h3 style="color: var(--secondary-green);">Adopt Me!</h3>
+                    <p>Raise and dress cute pets, decorate your house, and play with friends!</p>
+                </div>
+            </a>
+            
+            <a href="project.html" class="carousel-card">
+                <div class="card-img">
+                    <img src="https://tr.rbxcdn.com/180DAY-a64f70da20fc1e80ee76fe5d49c1be0a/512/512/Image/Png/noFilter" alt="Blox Fruits" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                </div>
+                <div class="card-content">
+                    <h3 style="color: #6a7985;">Blox Fruits</h3>
+                    <p>Become a master swordsman or a powerful blox fruit user!</p>
+                </div>
+            </a>
+
+            <a href="project.html" class="carousel-card">
+                <div class="card-img">
+                    <img src="https://tr.rbxcdn.com/180DAY-2256f921efa303aa6488b35b33d75ce0/512/512/Image/Png/noFilter" alt="Brookhaven" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                </div>
+                <div class="card-content">
+                    <h3 style="color: #f57f17;">Brookhaven RP</h3>
+                    <p>Hang out with like-minded people and roleplay in a bustling city.</p>
+                </div>
+            </a>
+
+            <!-- Additional Cards for Scrolling Demo -->
+            <a href="project.html" class="carousel-card">
+                <div class="card-img" style="background-color: var(--hero-bg);"></div>
+                <div class="card-content">
+                    <h3 style="color: var(--secondary-green);">Vine Valley</h3>
+                    <p>A relaxing farming and town-building simulator. Build your dream farm, interact with friends, and grow your empire.</p>
+                </div>
+            </a>
+            
+            <a href="project.html" class="carousel-card">
+                <div class="card-img" style="background-color: #9aa8b3;"></div>
+                <div class="card-content">
+                    <h3 style="color: #6a7985;">Steel Ops</h3>
+                    <p>Our upcoming unannounced action title pushing the boundaries of the engine. Stay tuned for massive updates.</p>
+                </div>
+            </a>
+
+        </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="https://www.roblox.com/communities/15587611/SteelRoot-Studios#!/about" target="_blank">
+                <img src="../Studio Stuff/MainIcon.png" alt="Roblox" style="height: 30px; filter: brightness(0) invert(1);"> Roblox Group
+            </a>
+            <a href="https://discord.com/invite/acuskPh3Cb" target="_blank">
+                Discord Server
+            </a>
+        </div>
+        <p style="font-weight: 700; font-size: 1.2rem;">&copy; 2026 Steel Root Studios.</p>
+    </footer>
+
+    <!-- Interactive Scripts to bring the page to life -->
+    <script>
+        // 1. Transparent Navbar on Scroll
+        const nav = document.getElementById('main-nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.remove('transparent');
+            } else {
+                nav.classList.add('transparent');
+            }
+        });
+
+        // 2. Fade In Elements on Scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // Optional: stop observing once it has faded in
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // 3. Floating Particles Background
+        const hero = document.getElementById('hero-section');
+        for (let i = 0; i < 25; i++) {
+            let particle = document.createElement('div');
+            particle.className = 'particle';
+            
+            // Randomize size, position, and speed
+            const size = Math.random() * 40 + 10; 
+            particle.style.width = size + 'px';
+            particle.style.height = size + 'px';
+            particle.style.left = Math.random() * 100 + 'vw';
+            particle.style.animationDuration = (Math.random() * 10 + 5) + 's';
+            particle.style.animationDelay = (Math.random() * 5) + 's';
+            
+            // Randomly make some circles, some squares
+            if (Math.random() > 0.5) particle.style.borderRadius = '50%';
+            else particle.style.borderRadius = '8px';
+            
+            hero.appendChild(particle);
+        }
+
+        // 4. Cartoon Wind Swooshes
+        function spawnWind() {
+            if (document.hidden) return;
+            
+            const container = document.getElementById('wind-container');
+            if(!container) return;
+            
+            const w = window.innerWidth;
+            const h = window.innerHeight;
+
+            const ns = "http://www.w3.org/2000/svg";
+            const path = document.createElementNS(ns, "path");
+            
+            // Randomize position within the top 80% of the screen
+            const startY = Math.random() * (h * 0.8) + 100; 
+            
+            let d = "";
+            const type = Math.floor(Math.random() * 3);
+            
+            if (type === 0) {
+                // The Cartoon Loop-de-loop
+                const lx = Math.random() * (w * 0.4) + (w * 0.2); // Center of the loop
+                d = `M -100 ${startY} L ${lx - 150} ${startY} C ${lx} ${startY}, ${lx + 100} ${startY - 200}, ${lx} ${startY - 100} C ${lx - 100} ${startY}, ${lx + 100} ${startY + 100}, ${lx + 150} ${startY} L ${w + 100} ${startY}`;
+            } else if (type === 1) {
+                // Classic Wavy Wind
+                d = `M -100 ${startY} Q ${w * 0.25} ${startY - 150} ${w * 0.5} ${startY} T ${w + 100} ${startY}`;
+            } else {
+                // Gentle breeze
+                d = `M -100 ${startY} Q ${w * 0.5} ${startY + 150} ${w + 100} ${startY}`;
+            }
+
+            path.setAttribute("d", d);
+            path.setAttribute("fill", "transparent");
+            path.setAttribute("stroke", "rgba(255, 255, 255, 0.4)");
+            path.setAttribute("stroke-width", "8");
+            path.setAttribute("stroke-linecap", "round");
+            
+            // CSS Animation
+            const length = Math.random() * 500 + 300;
+            path.style.strokeDasharray = `${length} 3000`;
+            path.style.strokeDashoffset = "3000";
+            
+            const duration = Math.random() * 2 + 3; // 3 to 5 seconds
+            path.style.animation = `windDash ${duration}s linear forwards`;
+            
+            container.appendChild(path);
+            
+            setTimeout(() => {
+                path.remove();
+            }, duration * 1000);
+        }
+
+        // Spawn wind loops frequently in the background
+        setInterval(spawnWind, 1000);
+        setTimeout(spawnWind, 200);
+        setTimeout(spawnWind, 500);
+
+        // 5. Dynamic Popping Emojis in Hero
+        const emojiList = [
+            "Smiling face with sunglasses 256.png",
+            "Partying face 256.png",
+            "Star-struck 256.png",
+            "Cowboy hat face 256.png",
+            "Exploding head 256.png",
+            "Face blowing a kiss 256.png",
+            "Money mouth face 256.png",
+            "Robot 256.png",
+            "Skull 256.png"
+        ];
+
+        function spawnDynamicEmoji() {
+            // Always schedule the next loop
+            const nextDelay = Math.random() * 2000 + 6000;
+            
+            const hero = document.getElementById('hero-section');
+            if(!hero || document.hidden) {
+                setTimeout(spawnDynamicEmoji, nextDelay);
+                return;
+            }
+
+            const emojiName = emojiList[Math.floor(Math.random() * emojiList.length)];
+            const img = document.createElement('img');
+            img.src = `../Emoji Icon Pack/256px/Outline/${emojiName}`;
+            img.alt = "Emoji";
+            
+            // Randomize position avoiding the direct center
+            const side = Math.random() > 0.5 ? 'left' : 'right';
+            const horizontalPos = Math.random() * 25 + 5; // 5% to 30% from edge
+            const verticalPos = Math.random() * 60 + 15; // 15% to 75% from top
+            
+            const size = Math.random() * 60 + 80; // 80px to 140px
+            const rotation = (Math.random() * 40 - 20); // -20deg to 20deg
+            
+            img.style.position = 'absolute';
+            img.style[side] = `${horizontalPos}%`;
+            img.style.top = `${verticalPos}%`;
+            img.style.width = `${size}px`;
+            img.style.zIndex = '3';
+            img.style.filter = 'drop-shadow(6px 6px 0 var(--border-color))';
+            
+            // Base style applies rotation via CSS variable
+            img.style.setProperty('--rot', `${rotation}deg`);
+            
+            // Add pop-in animation
+            img.className = 'emoji-pop-in';
+            
+            hero.appendChild(img);
+            
+            // After 3 seconds, pop out
+            setTimeout(() => {
+                img.className = 'emoji-pop-out';
+                // Remove from DOM after pop out completes
+                setTimeout(() => {
+                    img.remove();
+                }, 500);
+            }, 3000);
+            
+            // Schedule next emoji in 6 to 8 seconds (3s active + 3-5s pause)
+            setTimeout(spawnDynamicEmoji, nextDelay);
+        }
+
+        // Start dynamic emoji loop
+        setTimeout(spawnDynamicEmoji, 1000);
+
+        // 6. Carousel Scroll Logic
+        const carousel = document.getElementById('games-carousel');
+        const btnLeft = document.getElementById('scroll-left');
+        const btnRight = document.getElementById('scroll-right');
+        
+        if (carousel && btnLeft && btnRight) {
+            btnLeft.addEventListener('click', () => {
+                carousel.scrollBy({ left: -430, behavior: 'smooth' }); // Scroll left by one card width + gap
+            });
+            btnRight.addEventListener('click', () => {
+                carousel.scrollBy({ left: 430, behavior: 'smooth' }); // Scroll right by one card width + gap
+            });
+        }
+    </script>
+</body>
+</html>

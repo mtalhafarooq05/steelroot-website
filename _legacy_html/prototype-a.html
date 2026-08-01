@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype A - Bento Box</title>
+    <style>
+        :root {
+            --bg-color: #0f1115;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --text-main: #f0f0f0;
+            --accent: #4ade80;
+        }
+        body {
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Inter', system-ui, sans-serif;
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 200px);
+            gap: 1.5rem;
+            max-width: 1200px;
+            width: 100%;
+        }
+        .bento-item {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            position: relative;
+            overflow: hidden;
+        }
+        .bento-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+        .large { grid-column: span 2; grid-row: span 2; }
+        .wide { grid-column: span 2; }
+        .tall { grid-row: span 2; }
+        
+        h2 { margin: 0 0 0.5rem 0; font-size: 1.5rem; z-index: 1; }
+        p { margin: 0; color: #a0a0a0; z-index: 1; }
+        
+        .img-placeholder {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(45deg, #1a1c23, #2a2d36);
+            z-index: 0;
+            opacity: 0.5;
+        }
+        
+        .nav-back {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            color: var(--text-main);
+            text-decoration: none;
+            padding: 10px 20px;
+            background: var(--card-bg);
+            border-radius: 8px;
+            border: 1px solid var(--card-border);
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="nav-back">← Back</a>
+    <div class="bento-grid">
+        <div class="bento-item large">
+            <div class="img-placeholder"></div>
+            <h2>Featured Game</h2>
+            <p>1M+ Visits • Top Rated</p>
+        </div>
+        <div class="bento-item wide">
+            <div class="img-placeholder"></div>
+            <h2>Environment Art</h2>
+            <p>Cyberpunk Cityscape</p>
+        </div>
+        <div class="bento-item">
+            <div class="img-placeholder"></div>
+            <h2>UI Design</h2>
+        </div>
+        <div class="bento-item">
+            <div class="img-placeholder"></div>
+            <h2>Scripting</h2>
+        </div>
+        <div class="bento-item wide">
+            <div class="img-placeholder"></div>
+            <h2>Latest Update Showcase</h2>
+            <p>Combat Mechanics Revamp</p>
+        </div>
+    </div>
+</body>
+</html>

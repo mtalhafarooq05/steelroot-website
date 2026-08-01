@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steel Root - Project Page</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700;900&display=swap');
+
+        :root {
+            --bg-color: #f8f9fa;       
+            --panel-bg: #ffffff;       
+            --text-main: #2b2b2b;      
+            --text-muted: #6c757d;
+            
+            --logo-orange: #f07d00;    
+            --logo-red: #f34b4b;       
+            --logo-green: #8cc63f;     
+            --steel-grey: #e9ecef;     
+            
+            --shadow-sm: 0 4px 6px rgba(0,0,0,0.05);
+            --shadow-md: 0 10px 25px rgba(0,0,0,0.08);
+            --shadow-lg: 0 20px 40px rgba(0,0,0,0.12);
+        }
+        
+        body {
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Nunito', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 4rem;
+            background: var(--panel-bg);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .logo-placeholder {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.8rem;
+            color: var(--logo-orange);
+            text-decoration: none;
+        }
+
+        .logo-placeholder span.steel {
+            color: #4a4a4a;
+            background: var(--steel-grey);
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-size: 1.2rem;
+            transform: rotate(-2deg);
+            display: inline-block;
+            box-shadow: inset 0 -2px 0 rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .nav-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-muted);
+            font-weight: 700;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: color 0.2s;
+        }
+        
+        .nav-back:hover {
+            color: var(--logo-orange);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 3rem;
+        }
+
+        .project-header h1 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 3.5rem;
+            margin: 0 0 0.5rem 0;
+            color: var(--text-main);
+            line-height: 1;
+        }
+        
+        .project-tags {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .tag {
+            background: var(--steel-grey);
+            color: var(--text-muted);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .play-btn {
+            background: var(--logo-green);
+            color: white;
+            border-radius: 50px;
+            padding: 15px 40px;
+            font-weight: 900;
+            font-size: 1.2rem;
+            text-decoration: none;
+            box-shadow: 0 8px 20px rgba(140, 198, 63, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .play-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(140, 198, 63, 0.4);
+        }
+
+        .media-showcase {
+            width: 100%;
+            height: 500px;
+            background: #ffe3e3;
+            border-radius: 30px;
+            margin-bottom: 4rem;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .media-showcase::after {
+            content: '►';
+            font-size: 5rem;
+            color: var(--logo-red);
+            opacity: 0.8;
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+        
+        .media-showcase:hover::after {
+            transform: scale(1.1);
+            opacity: 1;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+
+        .description-panel {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-muted);
+        }
+        
+        .description-panel h2 {
+            font-family: 'Fredoka One', cursive;
+            color: var(--text-main);
+            margin-top: 0;
+            font-size: 2rem;
+        }
+
+        .stats-panel {
+            background: var(--panel-bg);
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .stat-item {
+            margin-bottom: 2rem;
+        }
+        
+        .stat-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .stat-item label {
+            display: block;
+            font-weight: 700;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        .stat-item value {
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.8rem;
+            color: var(--logo-orange);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="prototype-l-home.html" class="logo-placeholder">
+            <span class="steel">STEEL</span> ROOT
+        </a>
+    </nav>
+
+    <div class="container">
+        <a href="prototype-l-home.html" class="nav-back">← Back to Games</a>
+        
+        <div class="project-header">
+            <div>
+                <h1>Radish Rumble</h1>
+                <div class="project-tags">
+                    <div class="tag">Brawler</div>
+                    <div class="tag">Multiplayer</div>
+                    <div class="tag">Live</div>
+                </div>
+            </div>
+            <a href="#" class="play-btn">PLAY NOW</a>
+        </div>
+
+        <div class="media-showcase"></div>
+
+        <div class="info-grid">
+            <div class="description-panel">
+                <h2>About The Game</h2>
+                <p>Radish Rumble is our flagship title where you play as angry root vegetables battling it out in the dirt! We designed this game with chaotic, fast-paced fun in mind.</p>
+                <p>Featuring over 50 unique maps, hundreds of customizable skins, and a fully integrated competitive ranked mode, it offers endless replayability for players of all skill levels.</p>
+            </div>
+            
+            <div class="stats-panel">
+                <div class="stat-item">
+                    <label>Total Visits</label>
+                    <value>5.4M+</value>
+                </div>
+                <div class="stat-item">
+                    <label>Active Players</label>
+                    <value>12,400</value>
+                </div>
+                <div class="stat-item">
+                    <label>Favorites</label>
+                    <value>892K</value>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

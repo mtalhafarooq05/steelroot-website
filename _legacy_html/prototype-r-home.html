@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steel Root - Home (Soft Sunny)</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@700;900&display=swap');
+
+        :root {
+            /* Soft Sunny Palette - Lower Saturation Q */
+            --bg-color: #f0ab5a;       /* Softer, less saturated golden-orange */
+            --panel-bg: #fae2cc;       /* Bright, soft peach-beige */
+            --hero-bg: #df6f43;        /* Muted, softer red-orange */
+            --primary-orange: #c05429; /* Softer dark orange */
+            --secondary-green: #8cc63f;/* Logo green */
+            --border-color: #4a3022;   /* Softened dark brown */
+            --text-main: #4a3022;      
+            --text-light: #fae2cc;     
+        }
+        
+        body {
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Nunito', sans-serif;
+            background-image: 
+                radial-gradient(#e09a48 4px, transparent 4px);
+            background-size: 40px 40px;
+            overflow-x: hidden;
+        }
+
+        /* Top Bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 3rem;
+            background: var(--panel-bg);
+            border-bottom: 6px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-placeholder {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Fredoka One', cursive;
+            font-size: 2rem;
+            color: var(--hero-bg);
+            text-shadow: 2px 2px 0px var(--border-color), -1px -1px 0 var(--border-color), 1px -1px 0 var(--border-color), -1px 1px 0 var(--border-color), 1px 1px 0 var(--border-color);
+            letter-spacing: 2px;
+        }
+
+        .logo-placeholder span.steel {
+            color: var(--panel-bg);
+            background: var(--border-color);
+            padding: 0 8px;
+            border-radius: 4px;
+            font-size: 1.5rem;
+            transform: rotate(-3deg);
+            display: inline-block;
+            text-shadow: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 900;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            transition: transform 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--hero-bg);
+            transform: translateY(-2px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--hero-bg);
+            border: 6px solid var(--border-color);
+            border-radius: 24px;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-bottom: 4rem;
+            box-shadow: 12px 12px 0 var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 5rem;
+            color: var(--text-light);
+            margin: 0 0 1rem 0;
+            text-shadow: 4px 4px 0px var(--border-color);
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: var(--border-color);
+            font-weight: 900;
+            margin: 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Games Grid */
+        .section-title {
+            font-family: 'Fredoka One', cursive;
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            color: var(--text-main);
+            text-shadow: 2px 2px 0 var(--panel-bg);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+        }
+
+        .game-card {
+            background: var(--panel-bg);
+            color: var(--text-main);
+            border: 6px solid var(--border-color);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 8px 8px 0 var(--border-color);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+        }
+
+        .game-card:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 12px 12px 0 var(--border-color);
+        }
+
+        .card-img {
+            height: 250px;
+            background: var(--hero-bg);
+            border-bottom: 6px solid var(--border-color);
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-content h3 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.8rem;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .nav-back-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            color: var(--panel-bg);
+            background: var(--border-color);
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-family: 'Fredoka One', cursive;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="nav-back-float">MAIN MENU</a>
+    
+    <nav class="navbar">
+        <div class="logo-placeholder">
+            <span class="steel">STEEL</span> ROOT
+        </div>
+        <div class="nav-links">
+            <a href="#">Games</a>
+            <a href="#">Studio</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="hero">
+            <h1>WE GROW FUN</h1>
+            <p>Welcome to Steel Root Studios.</p>
+        </section>
+
+        <h2 class="section-title">OUR TITLES</h2>
+        <section class="grid">
+            <a href="prototype-r-project.html" class="game-card">
+                <div class="card-img" style="background: #df6f43;"></div>
+                <div class="card-content">
+                    <h3 style="color: var(--primary-orange);">Radish Rumble</h3>
+                    <p>Click to view project details →</p>
+                </div>
+            </a>
+            
+            <a href="prototype-r-project.html" class="game-card">
+                <div class="card-img" style="background: #8cc63f;"></div>
+                <div class="card-content">
+                    <h3 style="color: var(--secondary-green);">Vine Valley</h3>
+                    <p>Click to view project details →</p>
+                </div>
+            </a>
+            
+            <a href="prototype-r-project.html" class="game-card">
+                <div class="card-img" style="background: #e6b85c;"></div>
+                <div class="card-content">
+                    <h3 style="color: #c99330;">Steel Ops</h3>
+                    <p>Click to view project details →</p>
+                </div>
+            </a>
+        </section>
+    </div>
+</body>
+</html>

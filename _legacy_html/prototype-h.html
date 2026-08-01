@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype H - The Level Map</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@600;800&display=swap');
+
+        :root {
+            --bg-color: #26211f;
+            --panel-bg: #38302c;
+            --primary-orange: #f58a1f;
+            --secondary-green: #8cc63f;
+            --steel-grey: #e0e0e0;
+            --border-color: #110f0e;
+            --text-main: #f9f9f9;
+        }
+        
+        body {
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Nunito', sans-serif;
+            overflow-x: hidden;
+            background-image: radial-gradient(circle at 50% 0%, #3e3632 0%, var(--bg-color) 70%);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 3rem;
+            background: var(--panel-bg);
+            border-bottom: 4px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-placeholder {
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.5rem;
+            color: var(--primary-orange);
+            text-shadow: 2px 2px 0px var(--border-color);
+        }
+
+        .logo-placeholder span.steel {
+            color: var(--steel-grey);
+            background: var(--border-color);
+            padding: 0 4px;
+            border-radius: 4px;
+            transform: rotate(-3deg);
+            display: inline-block;
+            text-shadow: none;
+        }
+
+        /* Level Map Container */
+        .map-container {
+            max-width: 1000px;
+            margin: 4rem auto;
+            position: relative;
+            padding: 0 2rem;
+        }
+
+        /* The central dotted line */
+        .map-container::before {
+            content: '';
+            position: absolute;
+            top: 0; bottom: 0; left: 50%;
+            width: 8px;
+            margin-left: -4px;
+            background: repeating-linear-gradient(
+                to bottom,
+                var(--border-color) 0,
+                var(--border-color) 15px,
+                transparent 15px,
+                transparent 30px
+            );
+            z-index: 0;
+        }
+
+        .level {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 6rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .level:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        /* The Node / Marker on the line */
+        .level-marker {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-orange);
+            border: 4px solid var(--border-color);
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.5rem;
+            color: var(--border-color);
+            box-shadow: 0 4px 0 var(--border-color);
+            z-index: 2;
+        }
+
+        .level:nth-child(even) .level-marker {
+            background: var(--secondary-green);
+        }
+
+        /* The Content Card */
+        .level-content {
+            width: 40%;
+            background: var(--panel-bg);
+            border: 4px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 8px 0 var(--border-color);
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+
+        .level-content:hover {
+            transform: translateY(-5px);
+        }
+
+        .level-img {
+            width: 100%;
+            height: 200px;
+            background: #2a2522;
+            border-radius: 8px;
+            border: 3px solid var(--border-color);
+            margin-bottom: 1rem;
+        }
+
+        .level-content h3 {
+            font-family: 'Fredoka One', cursive;
+            color: var(--primary-orange);
+            margin: 0 0 0.5rem 0;
+            font-size: 1.5rem;
+        }
+        
+        .level:nth-child(even) .level-content h3 {
+            color: var(--secondary-green);
+        }
+
+        .level-content p {
+            margin: 0;
+            font-weight: 800;
+        }
+
+        .nav-back-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            color: var(--border-color);
+            background: var(--steel-grey);
+            text-decoration: none;
+            padding: 12px 24px;
+            border: 4px solid var(--border-color);
+            border-radius: 12px;
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.1rem;
+            z-index: 100;
+            box-shadow: 0 6px 0 var(--border-color);
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="nav-back-float">MAIN MENU</a>
+    
+    <nav class="navbar">
+        <div class="logo-placeholder">
+            <span class="steel">STEEL</span> ROOT
+        </div>
+    </nav>
+
+    <div class="map-container">
+        <!-- Level 1 -->
+        <div class="level">
+            <div class="level-marker">1</div>
+            <div class="level-content">
+                <div class="level-img"></div>
+                <h3>Radish Rumble</h3>
+                <p>Released: 2024 • 5M+ Plays</p>
+            </div>
+            <div style="width: 40%;"></div> <!-- Spacer -->
+        </div>
+
+        <!-- Level 2 -->
+        <div class="level">
+            <div class="level-marker">2</div>
+            <div class="level-content">
+                <div class="level-img"></div>
+                <h3>Dungeon Tycoon</h3>
+                <p>Released: 2025 • Top Rated</p>
+            </div>
+            <div style="width: 40%;"></div> <!-- Spacer -->
+        </div>
+
+        <!-- Level 3 -->
+        <div class="level">
+            <div class="level-marker">3</div>
+            <div class="level-content">
+                <div class="level-img"></div>
+                <h3>Project Unknown</h3>
+                <p>Status: In Development</p>
+            </div>
+            <div style="width: 40%;"></div> <!-- Spacer -->
+        </div>
+    </div>
+</body>
+</html>

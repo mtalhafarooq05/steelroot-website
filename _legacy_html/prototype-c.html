@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype C - Game Interface</title>
+    <style>
+        :root {
+            --bg-color: #1a1a24;
+            --primary: #facc15;
+            --secondary: #2dd4bf;
+            --panel-bg: rgba(0, 0, 0, 0.6);
+            --border: 2px solid var(--primary);
+        }
+        body {
+            margin: 0;
+            background-color: var(--bg-color);
+            color: #fff;
+            font-family: 'Roboto Mono', monospace;
+            background-image: 
+                linear-gradient(rgba(26, 26, 36, 0.9), rgba(26, 26, 36, 0.9)),
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.03) 2px, rgba(255,255,255,0.03) 4px);
+        }
+        
+        .container {
+            display: flex;
+            height: 100vh;
+            padding: 2rem;
+            box-sizing: border-box;
+            gap: 2rem;
+        }
+
+        .sidebar {
+            width: 300px;
+            background: var(--panel-bg);
+            border: var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 0 20px rgba(250, 204, 21, 0.1);
+        }
+
+        .avatar-box {
+            height: 200px;
+            background: #333;
+            border: 2px solid var(--secondary);
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .menu-btn {
+            background: transparent;
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 15px;
+            text-align: left;
+            font-family: inherit;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border-radius: 4px;
+        }
+        
+        .menu-btn:hover, .menu-btn.active {
+            background: var(--primary);
+            color: #000;
+            border-color: var(--primary);
+            transform: translateX(10px);
+        }
+
+        .main-content {
+            flex: 1;
+            background: var(--panel-bg);
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-bar {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .stat {
+            background: rgba(0,0,0,0.5);
+            padding: 5px 15px;
+            border-radius: 20px;
+            border: 1px solid var(--secondary);
+            color: var(--secondary);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #222;
+            height: 180px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.1);
+            position: relative;
+            cursor: pointer;
+            transition: border-color 0.2s;
+        }
+        
+        .card:hover {
+            border-color: var(--primary);
+        }
+
+        .card-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.8);
+            padding: 10px;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .nav-back {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: var(--primary);
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid var(--primary);
+            border-radius: 4px;
+        }
+        .nav-back:hover {
+            background: var(--primary);
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="avatar-box">Avatar Placeholder</div>
+            <button class="menu-btn active">► PLAY (Projects)</button>
+            <button class="menu-btn">► LOAD (Resume)</button>
+            <button class="menu-btn">► SETTINGS (Contact)</button>
+        </div>
+        
+        <div class="main-content">
+            <div class="header">
+                <h2>SELECT LEVEL</h2>
+                <div class="stat-bar">
+                    <div class="stat">EXP: 9999</div>
+                    <div class="stat">GAMES: 14</div>
+                </div>
+                <a href="index.html" class="nav-back">EXIT TO MAIN MENU</a>
+            </div>
+
+            <div class="grid">
+                <div class="card"><div class="card-label">Level 1: The Outpost</div></div>
+                <div class="card"><div class="card-label">Level 2: Neon Arena</div></div>
+                <div class="card"><div class="card-label">Level 3: Core Defense</div></div>
+                <div class="card"><div class="card-label">Level 4: Obby Rush</div></div>
+                <div class="card"><div class="card-label">Bonus: Asset Pack</div></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

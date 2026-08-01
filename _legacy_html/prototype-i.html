@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype I - Trading Cards</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@600;800&display=swap');
+
+        :root {
+            --bg-color: #26211f;
+            --panel-bg: #38302c;
+            --primary-orange: #f58a1f;
+            --secondary-green: #8cc63f;
+            --steel-grey: #e0e0e0;
+            --border-color: #110f0e;
+            --text-main: #f9f9f9;
+        }
+        
+        body {
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Nunito', sans-serif;
+            background-image: radial-gradient(circle at 50% 50%, #3e3632 0%, var(--bg-color) 100%);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 3rem;
+            background: var(--panel-bg);
+            border-bottom: 4px solid var(--border-color);
+            flex-shrink: 0;
+        }
+
+        .logo-placeholder {
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.5rem;
+            color: var(--primary-orange);
+            text-shadow: 2px 2px 0px var(--border-color);
+        }
+
+        .logo-placeholder span.steel {
+            color: var(--steel-grey);
+            background: var(--border-color);
+            padding: 0 4px;
+            border-radius: 4px;
+            transform: rotate(-3deg);
+            display: inline-block;
+            text-shadow: none;
+        }
+
+        .carousel-container {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            padding: 0 2rem;
+            gap: 3rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+        }
+        
+        /* Hide scrollbar */
+        .carousel-container::-webkit-scrollbar { display: none; }
+        .carousel-container { -ms-overflow-style: none; scrollbar-width: none; }
+
+        .trading-card {
+            min-width: 350px;
+            max-width: 400px;
+            height: 600px;
+            background: var(--panel-bg);
+            border: 6px solid var(--border-color);
+            border-radius: 24px;
+            scroll-snap-align: center;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            padding: 1rem;
+            box-shadow: 10px 15px 0 rgba(0,0,0,0.4);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .trading-card:hover {
+            transform: scale(1.02) translateY(-10px);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-family: 'Fredoka One', cursive;
+        }
+
+        .card-title {
+            font-size: 1.8rem;
+            color: var(--primary-orange);
+            text-shadow: 2px 2px 0 var(--border-color);
+            margin: 0;
+        }
+
+        .card-badge {
+            background: var(--secondary-green);
+            color: var(--border-color);
+            padding: 5px 10px;
+            border-radius: 10px;
+            border: 2px solid var(--border-color);
+            font-size: 0.9rem;
+        }
+
+        .card-image {
+            width: 100%;
+            flex-grow: 1;
+            background: #2a2522;
+            border: 4px solid var(--border-color);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+        }
+
+        .card-stats {
+            background: var(--border-color);
+            border-radius: 12px;
+            padding: 1rem;
+            color: var(--text-main);
+        }
+
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+        }
+        
+        .stat-row:last-child { margin-bottom: 0; }
+
+        .stat-value {
+            color: var(--secondary-green);
+            font-family: 'Fredoka One', cursive;
+        }
+
+        .nav-back-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            color: var(--border-color);
+            background: var(--steel-grey);
+            text-decoration: none;
+            padding: 12px 24px;
+            border: 4px solid var(--border-color);
+            border-radius: 12px;
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.1rem;
+            z-index: 100;
+            box-shadow: 0 6px 0 var(--border-color);
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="nav-back-float">MAIN MENU</a>
+    
+    <nav class="navbar">
+        <div class="logo-placeholder">
+            <span class="steel">STEEL</span> ROOT
+        </div>
+        <h2 style="margin:0; font-family: 'Fredoka One', cursive;">SELECT A GAME</h2>
+    </nav>
+
+    <div class="carousel-container">
+        
+        <!-- Card 1 -->
+        <div class="trading-card">
+            <div class="card-header">
+                <h2 class="card-title">Radish Rumble</h2>
+                <div class="card-badge">LIVE</div>
+            </div>
+            <div class="card-image"></div>
+            <div class="card-stats">
+                <div class="stat-row"><span>Genre</span> <span class="stat-value" style="color:var(--primary-orange)">Brawler</span></div>
+                <div class="stat-row"><span>Visits</span> <span class="stat-value">5,241,902</span></div>
+                <div class="stat-row"><span>Rating</span> <span class="stat-value">92%</span></div>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="trading-card">
+            <div class="card-header">
+                <h2 class="card-title" style="color: var(--secondary-green);">Neon Arena</h2>
+                <div class="card-badge" style="background:var(--primary-orange);">BETA</div>
+            </div>
+            <div class="card-image"></div>
+            <div class="card-stats">
+                <div class="stat-row"><span>Genre</span> <span class="stat-value" style="color:var(--primary-orange)">Shooter</span></div>
+                <div class="stat-row"><span>Visits</span> <span class="stat-value">124,500</span></div>
+                <div class="stat-row"><span>Rating</span> <span class="stat-value">88%</span></div>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="trading-card">
+            <div class="card-header">
+                <h2 class="card-title" style="color: var(--steel-grey);">Project X</h2>
+                <div class="card-badge" style="background:var(--steel-grey);">DEV</div>
+            </div>
+            <div class="card-image"></div>
+            <div class="card-stats">
+                <div class="stat-row"><span>Genre</span> <span class="stat-value" style="color:var(--primary-orange)">Mystery</span></div>
+                <div class="stat-row"><span>Visits</span> <span class="stat-value">---</span></div>
+                <div class="stat-row"><span>Rating</span> <span class="stat-value">---</span></div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

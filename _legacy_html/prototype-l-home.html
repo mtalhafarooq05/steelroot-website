@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steel Root - Home (Clean & Polished)</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700;900&display=swap');
+
+        :root {
+            /* Clean & Polished Palette based on the logo */
+            --bg-color: #f8f9fa;       /* Very soft, clean off-white */
+            --panel-bg: #ffffff;       /* Pure white panels */
+            --text-main: #2b2b2b;      /* Dark charcoal for readability */
+            --text-muted: #6c757d;
+            
+            /* Logo Colors for accents */
+            --logo-orange: #f07d00;    /* The 'ROOT' orange */
+            --logo-red: #f34b4b;       /* The radish red */
+            --logo-green: #8cc63f;     /* The leaf green */
+            --steel-grey: #e9ecef;     /* The steel plate color */
+            
+            --shadow-sm: 0 4px 6px rgba(0,0,0,0.05);
+            --shadow-md: 0 10px 25px rgba(0,0,0,0.08);
+            --shadow-lg: 0 20px 40px rgba(0,0,0,0.12);
+        }
+        
+        body {
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Nunito', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Top Bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 4rem;
+            background: var(--panel-bg);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-placeholder {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Fredoka One', cursive;
+            font-size: 2.2rem;
+            color: var(--logo-orange);
+            letter-spacing: 1px;
+        }
+
+        .logo-placeholder span.steel {
+            color: #4a4a4a;
+            background: var(--steel-grey);
+            padding: 2px 10px;
+            border-radius: 8px;
+            font-size: 1.6rem;
+            transform: rotate(-2deg);
+            display: inline-block;
+            box-shadow: inset 0 -3px 0 rgba(0,0,0,0.1);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--logo-red);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 6rem;
+            background: var(--panel-bg);
+            border-radius: 30px;
+            padding: 4rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 4rem;
+            color: var(--text-main);
+            margin: 0 0 1.5rem 0;
+            line-height: 1.1;
+        }
+        
+        .hero h1 span {
+            color: var(--logo-red);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            font-weight: 700;
+            margin: 0 0 2rem 0;
+            line-height: 1.6;
+        }
+        
+        .hero-btn {
+            background: var(--logo-orange);
+            color: white;
+            text-decoration: none;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: 900;
+            font-size: 1.1rem;
+            box-shadow: 0 8px 20px rgba(240, 125, 0, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: inline-block;
+        }
+        
+        .hero-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(240, 125, 0, 0.4);
+        }
+
+        .hero-visual {
+            width: 400px;
+            height: 300px;
+            background: linear-gradient(135deg, var(--logo-orange), var(--logo-red));
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-visual::after {
+            content: 'Studio Reel';
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-family: 'Fredoka One', cursive;
+            font-size: 2rem;
+            opacity: 0.5;
+        }
+
+        /* Games Grid */
+        .section-title {
+            font-family: 'Fredoka One', cursive;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--text-main);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+
+        .game-card {
+            background: var(--panel-bg);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card-img {
+            height: 220px;
+            background: var(--steel-grey);
+            position: relative;
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--panel-bg);
+            color: var(--logo-green);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-weight: 900;
+            font-size: 0.8rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .card-content {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-content h3 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.6rem;
+            margin: 0 0 1rem 0;
+            color: var(--text-main);
+        }
+
+        .card-content p {
+            color: var(--text-muted);
+            margin: 0 0 1.5rem 0;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+        
+        .card-link {
+            color: var(--logo-orange);
+            font-weight: 800;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .nav-back-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            color: white;
+            background: var(--text-main);
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            box-shadow: var(--shadow-md);
+            z-index: 100;
+            transition: transform 0.2s;
+        }
+        
+        .nav-back-float:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="nav-back-float">Back to Main Menu</a>
+    
+    <nav class="navbar">
+        <div class="logo-placeholder">
+            <span class="steel">STEEL</span> ROOT
+        </div>
+        <div class="nav-links">
+            <a href="#">Games</a>
+            <a href="#">About Us</a>
+            <a href="#">Careers</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="hero">
+            <div class="hero-text">
+                <h1>Crafting <span>Joy</span>.</h1>
+                <p>Steel Root is an independent game studio building vibrant, high-quality, and deeply engaging experiences for the Roblox platform.</p>
+                <a href="#games" class="hero-btn">Explore Our Games</a>
+            </div>
+            <div class="hero-visual"></div>
+        </section>
+
+        <h2 id="games" class="section-title">Our Featured Titles</h2>
+        <section class="grid">
+            <!-- Card 1 -->
+            <a href="prototype-l-project.html" class="game-card">
+                <div class="card-img" style="background: #ffe3e3;">
+                    <div class="card-badge" style="color: var(--logo-red);">LIVE</div>
+                </div>
+                <div class="card-content">
+                    <h3>Radish Rumble</h3>
+                    <p>A fast-paced multiplayer brawler where root vegetables fight for supremacy.</p>
+                    <div class="card-link">View Project →</div>
+                </div>
+            </a>
+            
+            <!-- Card 2 -->
+            <a href="prototype-l-project.html" class="game-card">
+                <div class="card-img" style="background: #e6f4d9;">
+                    <div class="card-badge">UPDATE</div>
+                </div>
+                <div class="card-content">
+                    <h3>Vine Valley</h3>
+                    <p>A relaxing farming and town-building simulator with deep customization.</p>
+                    <div class="card-link">View Project →</div>
+                </div>
+            </a>
+            
+            <!-- Card 3 -->
+            <a href="prototype-l-project.html" class="game-card">
+                <div class="card-img" style="background: #e9ecef;">
+                    <div class="card-badge" style="color: var(--text-muted);">IN DEV</div>
+                </div>
+                <div class="card-content">
+                    <h3>Project X</h3>
+                    <p>Our upcoming unannounced title pushing the boundaries of the engine.</p>
+                    <div class="card-link">View Project →</div>
+                </div>
+            </a>
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,682 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700;900&display=swap');
+
+:root {
+    /* The Trio Palette: Orange, Silver, Green */
+    --bg-color: #f0ab5a;       
+    --panel-bg: #dce1e5;       
+    --hero-bg: #82b936;        
+    --primary-orange: #d85d1e; 
+    --secondary-green: #618f26;
+    --border-color: #362215;   
+    --text-main: #362215;      
+    --text-light: #f4f6f8;     
+    --text-muted: #5a4b41;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    color: var(--text-main);
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--bg-color);
+    background-image: radial-gradient(#e09a48 4px, transparent 4px);
+    background-size: 40px 40px;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ============================
+   TYPOGRAPHY
+============================ */
+h1, h2, h3, h4, .brand-font {
+    font-family: 'Fredoka One', cursive;
+    margin-top: 0;
+}
+
+.text-shadow-heavy {
+    text-shadow: 4px 0px 0 #000, 3.7px 1.5px 0 #000, 2.8px 2.8px 0 #000, 1.5px 3.7px 0 #000, 0px 4px 0 #000, -1.5px 3.7px 0 #000, -2.8px 2.8px 0 #000, -3.7px 1.5px 0 #000, -4px 0px 0 #000, -3.7px -1.5px 0 #000, -2.8px -2.8px 0 #000, -1.5px -3.7px 0 #000, 0px -4px 0 #000, 1.5px -3.7px 0 #000, 2.8px -2.8px 0 #000, 3.7px -1.5px 0 #000; font-weight: 900;
+}
+
+/* ============================
+   NAVIGATION
+============================ */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 4rem;
+    background: var(--border-color);
+    border-bottom: 6px solid var(--panel-bg);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.logo-placeholder {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 2rem;
+    color: var(--text-light);
+    letter-spacing: 2px;
+    text-decoration: none;
+    font-family: 'Fredoka One', cursive;
+}
+
+.nav-links {
+    display: flex;
+    gap: 3rem;
+}
+
+.nav-links a {
+    color: var(--panel-bg);
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--hero-bg);
+}
+
+/* ============================
+   CONCEPT X: 100VH HERO
+============================ */
+.hero-full {
+    width: 100vw;
+    height: 100vh;
+    background: var(--hero-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    border-bottom: 12px solid var(--border-color);
+    padding-top: 80px; /* Accounts for fixed navbar */
+    overflow: hidden;
+    perspective: 1000px;
+}
+
+/* Animated moving dots background pattern for hero */
+@keyframes movePattern {
+    0% { background-position: 0 0; }
+    100% { background-position: 30px 30px; }
+}
+
+.hero-full::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: radial-gradient(rgba(255,255,255,0.2) 2px, transparent 2px);
+    background-size: 30px 30px;
+    z-index: 0;
+    animation: movePattern 4s linear infinite;
+}
+
+.hero-full > * {
+    z-index: 1;
+}
+
+#hero-logo {
+    max-width: 800px;
+    width: 90%;
+    height: auto;
+    filter: drop-shadow(8px 8px 0 var(--border-color));
+    margin-bottom: 3rem;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Floating Particles Effect */
+.particle {
+    position: absolute;
+    bottom: -100px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    z-index: 0;
+    animation: rise infinite linear;
+    pointer-events: none;
+}
+@keyframes rise {
+    0% { transform: translateY(0) rotate(0deg) scale(1); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(-120vh) rotate(360deg) scale(1.5); opacity: 0; }
+}
+
+/* Dynamic Popping Emojis */
+.emoji-pop-in {
+    animation: emojiPopIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.emoji-pop-out {
+    animation: emojiPopOut 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards;
+}
+
+@keyframes emojiPopIn {
+    0% { transform: translateY(50px) scale(0) rotate(var(--rot, 0deg)); opacity: 0; }
+    60% { transform: translateY(-20px) scale(1.1) rotate(var(--rot, 0deg)); opacity: 1; }
+    100% { transform: translateY(0) scale(1) rotate(var(--rot, 0deg)); opacity: 1; }
+}
+
+@keyframes emojiPopOut {
+    0% { transform: translateY(0) scale(1) rotate(var(--rot, 0deg)); opacity: 1; }
+    100% { transform: translateY(-50px) scale(0) rotate(var(--rot, 0deg)); opacity: 0; }
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    color: var(--text-light);
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.5rem;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-20px); }
+    60% { transform: translateY(-10px); }
+}
+
+/* ============================
+   GAMES CAROUSEL
+============================ */
+.games-section {
+    padding: 6rem 0 8rem 0;
+}
+
+.section-title {
+    font-size: 3.5rem;
+    margin-bottom: 3rem;
+    color: var(--text-light);
+    text-shadow: 4px 0px 0 #000, 3.7px 1.5px 0 #000, 2.8px 2.8px 0 #000, 1.5px 3.7px 0 #000, 0px 4px 0 #000, -1.5px 3.7px 0 #000, -2.8px 2.8px 0 #000, -3.7px 1.5px 0 #000, -4px 0px 0 #000, -3.7px -1.5px 0 #000, -2.8px -2.8px 0 #000, -1.5px -3.7px 0 #000, 0px -4px 0 #000, 1.5px -3.7px 0 #000, 2.8px -2.8px 0 #000, 3.7px -1.5px 0 #000; font-weight: 900;
+    text-align: center;
+}
+
+.carousel-wrapper {
+    position: relative;
+}
+
+.carousel-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 3rem;
+    padding: 2rem 100px; /* Increased padding to make room for arrows */
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none; /* Firefox */
+    scroll-behavior: smooth;
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--primary-orange);
+    color: var(--text-light);
+    border: 6px solid var(--border-color);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+    font-weight: 900;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 6px 6px 0 var(--border-color);
+    transition: transform 0.1s, box-shadow 0.1s, background 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-arrow:hover {
+    background: var(--hero-bg);
+}
+
+.carousel-arrow:active {
+    transform: translateY(-50%) translate(4px, 4px);
+    box-shadow: 2px 2px 0 var(--border-color);
+}
+
+.left-arrow {
+    left: 20px;
+}
+
+.right-arrow {
+    right: 20px;
+}
+
+.carousel-container::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+}
+
+.carousel-card {
+    min-width: 400px;
+    max-width: 400px;
+    scroll-snap-align: center;
+    background: var(--panel-bg);
+    border: 8px solid var(--border-color);
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 12px 12px 0 var(--border-color);
+    transition: transform 0.3s;
+    text-decoration: none;
+    color: var(--text-main);
+    display: flex;
+    flex-direction: column;
+}
+
+.carousel-card:hover {
+    transform: scale(1.05) translateY(-10px);
+}
+
+.card-img {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 8px solid var(--border-color);
+}
+
+.card-content {
+    padding: 2rem;
+    flex-grow: 1;
+}
+
+.card-content h3 {
+    font-size: 2.5rem;
+    margin: 0 0 1rem 0;
+}
+
+.card-content p {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* ============================
+   OTHER STYLES (Kept for compatibility)
+============================ */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    flex-grow: 1;
+    padding-top: 100px; /* offset fixed nav */
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background: var(--primary-orange);
+    color: var(--text-light);
+    border: 8px solid var(--border-color);
+    border-radius: 20px;
+    padding: 20px 40px;
+    font-family: 'Fredoka One', cursive;
+    font-size: 2rem;
+    text-decoration: none;
+    box-shadow: 8px 8px 0 var(--border-color);
+    transition: transform 0.1s, box-shadow 0.1s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Continuous sweeping shine effect to draw attention */
+.btn::after {
+    content: '';
+    position: absolute;
+    top: 0; 
+    left: -150%; 
+    width: 50%; 
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.4), transparent);
+    transform: skewX(-25deg);
+    animation: sweep 4s infinite;
+}
+
+@keyframes sweep {
+    0% { left: -150%; }
+    20% { left: 200%; }
+    100% { left: 200%; }
+}
+
+.btn:active {
+    transform: translate(6px, 6px);
+    box-shadow: 2px 2px 0 var(--border-color);
+}
+
+/* About Grid */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-bottom: 8rem;
+}
+
+.about-text h1 {
+    font-size: 4rem;
+    color: var(--primary-orange);
+    text-shadow: 4px 0px 0 #000, 3.7px 1.5px 0 #000, 2.8px 2.8px 0 #000, 1.5px 3.7px 0 #000, 0px 4px 0 #000, -1.5px 3.7px 0 #000, -2.8px 2.8px 0 #000, -3.7px 1.5px 0 #000, -4px 0px 0 #000, -3.7px -1.5px 0 #000, -2.8px -2.8px 0 #000, -1.5px -3.7px 0 #000, 0px -4px 0 #000, 1.5px -3.7px 0 #000, 2.8px -2.8px 0 #000, 3.7px -1.5px 0 #000; font-weight: 900;
+    margin-bottom: 2rem;
+}
+
+.about-text p {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.about-image {
+    background: var(--panel-bg);
+    border: 8px solid var(--border-color);
+    border-radius: 30px;
+    padding: 4rem;
+    box-shadow: 16px 16px 0 var(--border-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(2deg);
+}
+.about-image img {
+    max-width: 100%;
+    filter: drop-shadow(8px 8px 0 var(--border-color));
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-bottom: 5rem;
+}
+
+.team-member {
+    background: var(--panel-bg);
+    border: 6px solid var(--border-color);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 8px 8px 0 var(--border-color);
+    text-decoration: none;
+    color: var(--text-main);
+    transition: transform 0.2s;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+}
+
+.team-pfp {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 6px solid var(--border-color);
+    background: var(--primary-orange);
+    object-fit: cover;
+    margin: 0 auto 1.5rem auto;
+}
+
+.team-member h3 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+/* Footer */
+.footer {
+    background: var(--border-color);
+    color: var(--text-light);
+    padding: 4rem;
+    text-align: center;
+    margin-top: auto;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.footer-links a {
+    color: var(--panel-bg);
+    font-weight: 900;
+    text-decoration: none;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.footer-links a:hover {
+    color: var(--hero-bg);
+}
+
+/* Project Info Grid */
+.info-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+}
+
+.panel {
+    background: var(--panel-bg);
+    border: 6px solid var(--border-color);
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 8px 8px 0 var(--border-color);
+}
+
+/* ============================
+   PROJECTS HUB
+============================ */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3rem;
+    padding: 0 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background: var(--panel-bg);
+    border: 6px solid var(--border-color);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 8px 8px 0 var(--border-color);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: var(--text-main);
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 12px 12px 0 var(--border-color);
+}
+
+.project-card-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-bottom: 6px solid var(--border-color);
+    overflow: hidden;
+    background: var(--primary-orange);
+}
+
+.project-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.project-card:hover .project-card-img img {
+    transform: scale(1.05);
+}
+
+.project-card-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.project-card-content h3 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 2rem;
+    margin: 0 0 0.5rem 0;
+    color: var(--text-main);
+}
+
+.project-card-content p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    font-weight: 700;
+    margin: 0 0 1.5rem 0;
+    flex-grow: 1;
+}
+
+.btn-play-card {
+    background: var(--hero-bg);
+    color: var(--text-light);
+    padding: 1rem;
+    text-align: center;
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.2rem;
+    border: 4px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 4px 4px 0 var(--border-color);
+    transition: transform 0.1s, box-shadow 0.1s;
+    text-decoration: none;
+}
+
+.btn-play-card:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 var(--border-color);
+}
+
+/* ============================
+   ABOUT PAGE
+============================ */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-bottom: 6rem;
+}
+
+.about-text h1 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 4rem;
+    color: var(--hero-bg);
+    text-shadow: 4px 0px 0 #000, 3.7px 1.5px 0 #000, 2.8px 2.8px 0 #000, 1.5px 3.7px 0 #000, 0px 4px 0 #000, -1.5px 3.7px 0 #000, -2.8px 2.8px 0 #000, -3.7px 1.5px 0 #000, -4px 0px 0 #000, -3.7px -1.5px 0 #000, -2.8px -2.8px 0 #000, -1.5px -3.7px 0 #000, 0px -4px 0 #000, 1.5px -3.7px 0 #000, 2.8px -2.8px 0 #000, 3.7px -1.5px 0 #000; font-weight: 900;
+    margin-bottom: 1.5rem;
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 500px;
+    filter: drop-shadow(8px 8px 0 var(--border-color));
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3rem;
+}
+
+.team-member {
+    background: var(--panel-bg);
+    border: 6px solid var(--border-color);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-main);
+    box-shadow: 8px 8px 0 var(--border-color);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.team-member:hover {
+    transform: translateY(-8px);
+    box-shadow: 12px 12px 0 var(--border-color);
+}
+
+.team-pfp {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 6px solid var(--border-color);
+    margin-bottom: 1.5rem;
+    object-fit: cover;
+}
+
+.team-member h3 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.float-anim { animation: float 6s ease-in-out infinite; }
+
+
+/* ============================
+   PROJECTS FILTER UI
+============================ */
+.project-filters {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: var(--panel-bg);
+    color: var(--text-main);
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    border: 6px solid var(--border-color);
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 6px 6px 0 var(--border-color);
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s, color 0.2s;
+}
+
+.filter-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 8px 8px 0 var(--border-color);
+}
+
+.filter-btn.active {
+    background: var(--hero-bg);
+    color: var(--text-light);
+    text-shadow: 3px 0px 0 #000, 2.8px 1.1px 0 #000, 2.1px 2.1px 0 #000, 1.1px 2.8px 0 #000, 0px 3px 0 #000, -1.1px 2.8px 0 #000, -2.1px 2.1px 0 #000, -2.8px 1.1px 0 #000, -3px 0px 0 #000, -2.8px -1.1px 0 #000, -2.1px -2.1px 0 #000, -1.1px -2.8px 0 #000, 0px -3px 0 #000, 1.1px -2.8px 0 #000, 2.1px -2.1px 0 #000, 2.8px -1.1px 0 #000;
+}
+

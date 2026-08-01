@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700;900&display=swap');
+
+:root {
+    /* The Trio Palette: Orange, Silver, Green */
+    --bg-color: #f0ab5a;       /* Soft Sunny Orange */
+    --panel-bg: #dce1e5;       /* Silver/Metal */
+    --hero-bg: #82b936;        /* Vibrant Leaf Green */
+    --primary-orange: #d85d1e; /* Deeper orange for accents */
+    --secondary-green: #618f26;/* Darker green for hover/accents */
+    --border-color: #362215;   /* Dark brown ink */
+    --text-main: #362215;      
+    --text-light: #f4f6f8;     /* Very light silver for text on dark bg */
+    --text-muted: #5a4b41;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Nunito', sans-serif;
+    background-image: radial-gradient(#e09a48 4px, transparent 4px);
+    background-size: 40px 40px;
+    overflow-x: hidden;
+}
+
+/* ============================
+   TYPOGRAPHY
+============================ */
+h1, h2, h3, h4, .brand-font {
+    font-family: 'Fredoka One', cursive;
+    margin-top: 0;
+}
+
+.text-shadow-heavy {
+    text-shadow: 3px 3px 0 var(--border-color);
+}
+
+.text-shadow-outline {
+    text-shadow: 2px 2px 0px var(--border-color), -1px -1px 0 var(--border-color), 1px -1px 0 var(--border-color), -1px 1px 0 var(--border-color), 1px 1px 0 var(--border-color);
+}
+
+/* ============================
+   LAYOUT COMPONENTS
+============================ */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.section-title {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: var(--text-main);
+    text-shadow: 2px 2px 0 var(--panel-bg);
+    text-align: center;
+}
+
+/* ============================
+   NAVIGATION
+============================ */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+    background: var(--panel-bg);
+    border-bottom: 6px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo-placeholder {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 2rem;
+    color: var(--primary-orange);
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+
+.logo-placeholder span.steel {
+    color: var(--text-light);
+    background: #7a8a94; 
+    padding: 0 8px;
+    border-radius: 4px;
+    font-size: 1.5rem;
+    transform: rotate(-3deg);
+    display: inline-block;
+    border: 3px solid var(--border-color);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    transition: transform 0.2s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--hero-bg);
+    transform: translateY(-2px);
+}
+
+/* ============================
+   BUTTONS
+============================ */
+.btn {
+    display: inline-block;
+    background: var(--hero-bg);
+    color: var(--text-light);
+    border: 6px solid var(--border-color);
+    border-radius: 16px;
+    padding: 15px 30px;
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.5rem;
+    text-decoration: none;
+    box-shadow: 6px 6px 0 var(--border-color);
+    transition: transform 0.1s, box-shadow 0.1s;
+    cursor: pointer;
+}
+
+.btn:active {
+    transform: translate(4px, 4px);
+    box-shadow: 2px 2px 0 var(--border-color);
+}
+
+.btn-secondary {
+    background: var(--primary-orange);
+}
+
+/* ============================
+   GAME CARDS
+============================ */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+.game-card {
+    background: var(--panel-bg);
+    color: var(--text-main);
+    border: 6px solid var(--border-color);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 8px 8px 0 var(--border-color);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.game-card:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 12px 12px 0 var(--border-color);
+}
+
+.card-img {
+    height: 220px;
+    border-bottom: 6px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+}
+
+.card-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-content h3 {
+    font-size: 1.8rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.card-content p {
+    font-size: 1.1rem;
+    margin: 0 0 1rem 0;
+    flex-grow: 1;
+}
+
+.card-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: auto;
+}
+
+.tag {
+    background: var(--border-color);
+    color: var(--text-light);
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-weight: 900;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+/* ============================
+   FOOTER
+============================ */
+.footer {
+    background: var(--border-color);
+    color: var(--text-light);
+    padding: 3rem;
+    text-align: center;
+    border-top: 6px solid var(--panel-bg);
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-links a {
+    color: var(--panel-bg);
+    font-weight: 900;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.footer-links a:hover {
+    color: var(--hero-bg);
+}
