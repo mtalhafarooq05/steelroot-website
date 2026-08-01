@@ -691,3 +691,155 @@ h1, h2, h3, h4, .brand-font {
     text-shadow: 3px 0px 0 #000, 2.8px 1.1px 0 #000, 2.1px 2.1px 0 #000, 1.1px 2.8px 0 #000, 0px 3px 0 #000, -1.1px 2.8px 0 #000, -2.1px 2.1px 0 #000, -2.8px 1.1px 0 #000, -3px 0px 0 #000, -2.8px -1.1px 0 #000, -2.1px -2.1px 0 #000, -1.1px -2.8px 0 #000, 0px -3px 0 #000, 1.1px -2.8px 0 #000, 2.1px -2.1px 0 #000, 2.8px -1.1px 0 #000;
 }
 
+/* ============================
+   MOBILE RESPONSIVENESS (max-width: 768px)
+============================ */
+
+/* Desktop Hamburger Button (Hidden) */
+.hamburger-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+    z-index: 1001;
+}
+
+.hamburger-btn .bar {
+    width: 35px;
+    height: 5px;
+    background-color: var(--text-light);
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+    /* 1. Global typography & Elements */
+    .page-title {
+        font-size: 3rem !important;
+    }
+    .section-title {
+        font-size: 2.5rem;
+    }
+    .btn {
+        padding: 15px 25px;
+        font-size: 1.5rem;
+    }
+
+    /* 2. Navbar & Hamburger */
+    .navbar {
+        padding: 0.5rem 1rem;
+    }
+    .logo-placeholder img {
+        height: 60px !important;
+    }
+    .logo-placeholder {
+        font-size: 1.5rem;
+    }
+    .hamburger-btn {
+        display: flex;
+    }
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 100%;
+        background-color: var(--border-color);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        transition: right 0.3s ease-in-out;
+    }
+    .nav-links.open {
+        right: 0;
+    }
+    /* Hamburger animation states */
+    .hamburger-btn .bar1 { transform: translateY(10px) rotate(45deg); }
+    .hamburger-btn .bar2 { opacity: 0; }
+    .hamburger-btn .bar3 { transform: translateY(-10px) rotate(-45deg); }
+
+    /* 3. Hero Section */
+    #hero-logo {
+        width: 95%;
+        margin-bottom: 2rem;
+    }
+    .scroll-indicator {
+        font-size: 1.2rem;
+        bottom: 20px;
+    }
+
+    /* 4. Games Carousel */
+    .games-section {
+        padding: 4rem 0;
+    }
+    .carousel-container {
+        padding: 2rem 20px; /* Reduced side padding */
+        gap: 1.5rem;
+    }
+    .carousel-card {
+        min-width: 85vw; /* Fits phone screen */
+    }
+    .carousel-arrow {
+        display: none; /* Hide arrows, rely on touch swipe */
+    }
+
+    /* 5. Projects Grid */
+    .projects-grid {
+        grid-template-columns: 1fr; /* Single column */
+        padding: 0 20px;
+    }
+    .filter-container {
+        flex-wrap: wrap; /* Let filter buttons wrap */
+        padding: 0 20px;
+    }
+    .filter-btn {
+        font-size: 1.2rem;
+        padding: 10px 20px;
+    }
+
+    /* 6. About Grid */
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0 20px;
+    }
+    .about-image {
+        order: -1; /* Move image above text */
+        width: 80%;
+    }
+    .team-grid {
+        grid-template-columns: 1fr; /* Stack team members */
+    }
+
+    /* 7. Contact Page */
+    .contact-card {
+        padding: 2rem 1rem !important;
+    }
+    .contact-card div {
+        flex-direction: column;
+    }
+    .contact-btn {
+        width: 100%;
+        font-size: 1.2rem !important;
+        padding: 15px !important;
+    }
+
+    /* 8. Footer */
+    .footer {
+        padding: 2rem 1rem;
+    }
+    .footer div[style*="flexDirection: 'row'"] {
+        flex-direction: column !important;
+    }
+}
+@media (max-width: 768px) {
+    .footer-buttons {
+        flex-direction: column !important;
+        width: 100%;
+        padding: 0 20px;
+    }
+}

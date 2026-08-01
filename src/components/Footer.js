@@ -31,7 +31,7 @@ export default function Footer() {
           JOIN THE CREW!
       </h2>
 
-      <div style={{ display: 'flex', gap: '1.5rem', zIndex: 1, flexWrap: 'wrap', justifyContent: 'center' }}>
+      <div className="footer-buttons" style={{ display: 'flex', gap: '1.5rem', zIndex: 1, flexWrap: 'wrap', justifyContent: 'center' }}>
         <a href="https://discord.com/invite/acuskPh3Cb" target="_blank" rel="noreferrer" className="btn" style={{ background: '#5865F2', display: 'flex', alignItems: 'center', gap: '10px', padding: '15px 30px', fontSize: '1.2rem', textDecoration: 'none' }}>
           <img src="/Free Icon Pack v3.1 (Basic)/Free Icon Pack v3.1 (Basic)/Social/Discord/256w/Gamepad 2nd Outline 256px.png" alt="Discord" style={{ height: '28px' }} />
           Discord Server
