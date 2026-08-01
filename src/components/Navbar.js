@@ -16,7 +16,7 @@ export default function Navbar() {
     <nav className={`navbar ${menuOpen ? 'menu-open' : ''}`} id="main-nav">
       <Link href="/" className="logo-placeholder">
         <img src="/Studio Stuff/MainIcon.png" alt="Steel Root Logo" style={{ height: '85px', filter: 'brightness(0) invert(1)' }} />
-        STEEL ROOT
+        STEELROOT
       </Link>
       
       <button className="hamburger-btn" onClick={() => setMenuOpen(!menuOpen)}>

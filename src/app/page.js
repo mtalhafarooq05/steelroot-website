@@ -5,25 +5,11 @@ import Link from 'next/link';
 
 const FEATURED_GAMES = [
   {
-    title: "BloxBlast",
+    title: "🎮 Lock & Launch – Open Beta! 🚀",
     link: "/projects",
-    image: "https://tr.rbxcdn.com/180DAY-016b56bca8f7935cb4860dcf4ba3f5d4/500/280/Image/Jpeg/noFilter",
-    color: "var(--primary-orange)",
-    description: "THE most relaxing puzzle game on Roblox! Drag blocks, clear rows, and chain combos."
-  },
-  {
-    title: "Better Music",
-    link: "/projects",
-    image: "https://tr.rbxcdn.com/180DAY-2cf83c4be47fff668ee9b719908ad473/500/280/Image/Jpeg/noFilter",
-    color: "var(--secondary-green)",
-    description: "Fight for your favorite song in this musical brawler!"
-  },
-  {
-    title: "🍕 My Pizza Shop",
-    link: "/projects",
-    image: "https://tr.rbxcdn.com/180DAY-02e3d0421fe9a64be34b56a13ff7d8d2/500/280/Image/Jpeg/noFilter",
+    image: "https://tr.rbxcdn.com/180DAY-95cad273751f059fcf5d9820c14bb49a/500/280/Image/Jpeg/noFilter",
     color: "#6a7985",
-    description: "Build the pizza shop of your dreams! Make delicious pizzas, serve hungry customers, and hire workers."
+    description: "Jump into chaotic, cartoon-style missile battles where the goal is simple: hover, lock, and launch!"
   },
   {
     title: "🎵 Choose A Song 🎵",
@@ -33,6 +19,13 @@ const FEATURED_GAMES = [
     description: "Join the ultimate music showdown! Battle against other players to decide which song is better."
   },
   {
+    title: "Better Music",
+    link: "/projects",
+    image: "https://tr.rbxcdn.com/180DAY-2cf83c4be47fff668ee9b719908ad473/500/280/Image/Jpeg/noFilter",
+    color: "var(--secondary-green)",
+    description: "Fight for your favorite song in this musical brawler!"
+  },
+  {
     title: "[🗿] Be a Warrior for Brainrot!",
     link: "/projects",
     image: "https://tr.rbxcdn.com/180DAY-649fa2ee7317bc92ff2f08eaa7c4d075/500/280/Image/Jpeg/noFilter",
@@ -40,11 +33,18 @@ const FEATURED_GAMES = [
     description: "Crash through massive pillars with your Giga-Hammer! Collect the legendary Brainrots for massive multipliers."
   },
   {
-    title: "🎮 Lock & Launch – Open Beta! 🚀",
+    title: "BloxBlast",
     link: "/projects",
-    image: "https://tr.rbxcdn.com/180DAY-95cad273751f059fcf5d9820c14bb49a/500/280/Image/Jpeg/noFilter",
+    image: "https://tr.rbxcdn.com/180DAY-016b56bca8f7935cb4860dcf4ba3f5d4/500/280/Image/Jpeg/noFilter",
+    color: "var(--primary-orange)",
+    description: "THE most relaxing puzzle game on Roblox! Drag blocks, clear rows, and chain combos."
+  },
+  {
+    title: "🍕 My Pizza Shop",
+    link: "/projects",
+    image: "https://tr.rbxcdn.com/180DAY-02e3d0421fe9a64be34b56a13ff7d8d2/500/280/Image/Jpeg/noFilter",
     color: "#6a7985",
-    description: "Jump into chaotic, cartoon-style missile battles where the goal is simple: hover, lock, and launch!"
+    description: "Build the pizza shop of your dreams! Make delicious pizzas, serve hungry customers, and hire workers."
   }
 ];
 
