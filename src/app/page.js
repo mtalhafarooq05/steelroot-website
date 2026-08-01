@@ -161,57 +161,61 @@ export default function Home() {
               
               <Link href="/projects" className="carousel-card">
                   <div className="card-img">
+                      <img src="https://tr.rbxcdn.com/180DAY-016b56bca8f7935cb4860dcf4ba3f5d4/500/280/Image/Jpeg/noFilter" alt="BloxBlast" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                  </div>
+                  <div className="card-content">
+                      <h3 style={{ color: 'var(--primary-orange)' }}>BloxBlast</h3>
+                      <p>THE most relaxing puzzle game on Roblox! Drag blocks, clear rows, and chain combos.</p>
+                  </div>
+              </Link>
+              
+              <Link href="/projects" className="carousel-card">
+                  <div className="card-img">
                       <img src="https://tr.rbxcdn.com/180DAY-2cf83c4be47fff668ee9b719908ad473/500/280/Image/Jpeg/noFilter" alt="Better Music" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                   </div>
                   <div className="card-content">
-                      <h3 style={{ color: 'var(--primary-orange)' }}>Better Music</h3>
+                      <h3 style={{ color: 'var(--secondary-green)' }}>Better Music</h3>
                       <p>Fight for your favorite song in this musical brawler!</p>
                   </div>
               </Link>
               
               <Link href="/projects" className="carousel-card">
                   <div className="card-img">
-                      <img src="https://tr.rbxcdn.com/180DAY-f5dc501881f5a8128689b14eab0213e5/512/512/Image/Png/noFilter" alt="Adopt Me!" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                      <img src="https://i.ytimg.com/vi/UuWpD9MjaxM/maxresdefault.jpg" alt="Bike System" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                   </div>
                   <div className="card-content">
-                      <h3 style={{ color: 'var(--secondary-green)' }}>Adopt Me!</h3>
-                      <p>Raise and dress cute pets, decorate your house, and play with friends!</p>
-                  </div>
-              </Link>
-              
-              <Link href="/projects" className="carousel-card">
-                  <div className="card-img">
-                      <img src="https://tr.rbxcdn.com/180DAY-a64f70da20fc1e80ee76fe5d49c1be0a/512/512/Image/Png/noFilter" alt="Blox Fruits" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-                  </div>
-                  <div className="card-content">
-                      <h3 style={{ color: '#6a7985' }}>Blox Fruits</h3>
-                      <p>Become a master swordsman or a powerful blox fruit user!</p>
+                      <h3 style={{ color: '#6a7985' }}>Bike System</h3>
+                      <p>A robust, physics-driven platformer bike system designed for precision and smooth handling.</p>
                   </div>
               </Link>
 
               <Link href="/projects" className="carousel-card">
                   <div className="card-img">
-                      <img src="https://tr.rbxcdn.com/180DAY-2256f921efa303aa6488b35b33d75ce0/512/512/Image/Png/noFilter" alt="Brookhaven" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                      <img src="https://i.ytimg.com/vi/Igqqaik668g/maxresdefault.jpg" alt="Parkour Movement" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                   </div>
                   <div className="card-content">
-                      <h3 style={{ color: '#f57f17' }}>Brookhaven RP</h3>
-                      <p>Hang out with like-minded people and roleplay in a bustling city.</p>
+                      <h3 style={{ color: '#f57f17' }}>Parkour Movement</h3>
+                      <p>A clean and smooth parkour movement system with climbing and vaulting.</p>
                   </div>
               </Link>
 
               <Link href="/projects" className="carousel-card">
-                  <div className="card-img" style={{ backgroundColor: 'var(--hero-bg)' }}></div>
+                  <div className="card-img">
+                      <img src="https://i.ytimg.com/vi/J_1b9B01XIA/maxresdefault.jpg" alt="Snooker System" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                  </div>
                   <div className="card-content">
-                      <h3 style={{ color: 'var(--secondary-green)' }}>Vine Valley</h3>
-                      <p>A relaxing farming and town-building simulator. Build your dream farm, interact with friends, and grow your empire.</p>
+                      <h3 style={{ color: 'var(--secondary-green)' }}>Snooker System</h3>
+                      <p>A working snooker game system built with accurate ball physics and hit detection.</p>
                   </div>
               </Link>
               
               <Link href="/projects" className="carousel-card">
-                  <div className="card-img" style={{ backgroundColor: '#9aa8b3' }}></div>
+                  <div className="card-img">
+                      <img src="https://i.ytimg.com/vi/290vNrvdRnM/maxresdefault.jpg" alt="Chest Open Sample" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                  </div>
                   <div className="card-content">
-                      <h3 style={{ color: '#6a7985' }}>Steel Ops</h3>
-                      <p>Our upcoming unannounced action title pushing the boundaries of the engine. Stay tuned for massive updates.</p>
+                      <h3 style={{ color: '#6a7985' }}>Chest Open Sample</h3>
+                      <p>A smooth animation and interaction system for opening loot chests.</p>
                   </div>
               </Link>
 
