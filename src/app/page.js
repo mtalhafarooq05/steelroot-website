@@ -3,6 +3,51 @@
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 
+const FEATURED_GAMES = [
+  {
+    title: "BloxBlast",
+    link: "/projects",
+    image: "https://tr.rbxcdn.com/180DAY-016b56bca8f7935cb4860dcf4ba3f5d4/500/280/Image/Jpeg/noFilter",
+    color: "var(--primary-orange)",
+    description: "THE most relaxing puzzle game on Roblox! Drag blocks, clear rows, and chain combos."
+  },
+  {
+    title: "Better Music",
+    link: "/projects",
+    image: "https://tr.rbxcdn.com/180DAY-2cf83c4be47fff668ee9b719908ad473/500/280/Image/Jpeg/noFilter",
+    color: "var(--secondary-green)",
+    description: "Fight for your favorite song in this musical brawler!"
+  },
+  {
+    title: "🍕 My Pizza Shop",
+    link: "/projects",
+    image: "https://tr.rbxcdn.com/180DAY-02e3d0421fe9a64be34b56a13ff7d8d2/500/280/Image/Jpeg/noFilter",
+    color: "#6a7985",
+    description: "Build the pizza shop of your dreams! Make delicious pizzas, serve hungry customers, and hire workers."
+  },
+  {
+    title: "🎵 Choose A Song 🎵",
+    link: "/projects",
+    image: "https://tr.rbxcdn.com/180DAY-61976bdce1ddc5d265be77f1ed7cd433/500/280/Image/Jpeg/noFilter",
+    color: "#f57f17",
+    description: "Join the ultimate music showdown! Battle against other players to decide which song is better."
+  },
+  {
+    title: "[🗿] Be a Warrior for Brainrot!",
+    link: "/projects",
+    image: "https://tr.rbxcdn.com/180DAY-649fa2ee7317bc92ff2f08eaa7c4d075/500/280/Image/Jpeg/noFilter",
+    color: "var(--secondary-green)",
+    description: "Crash through massive pillars with your Giga-Hammer! Collect the legendary Brainrots for massive multipliers."
+  },
+  {
+    title: "🎮 Lock & Launch – Open Beta! 🚀",
+    link: "/projects",
+    image: "https://tr.rbxcdn.com/180DAY-95cad273751f059fcf5d9820c14bb49a/500/280/Image/Jpeg/noFilter",
+    color: "#6a7985",
+    description: "Jump into chaotic, cartoon-style missile battles where the goal is simple: hover, lock, and launch!"
+  }
+];
+
 export default function Home() {
   const heroRef = useRef(null);
   const windContainerRef = useRef(null);
@@ -159,65 +204,17 @@ export default function Home() {
 
               <div className="carousel-container" id="games-carousel">
               
-              <Link href="/projects" className="carousel-card">
-                  <div className="card-img">
-                      <img src="https://tr.rbxcdn.com/180DAY-016b56bca8f7935cb4860dcf4ba3f5d4/500/280/Image/Jpeg/noFilter" alt="BloxBlast" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-                  </div>
-                  <div className="card-content">
-                      <h3 style={{ color: 'var(--primary-orange)' }}>BloxBlast</h3>
-                      <p>THE most relaxing puzzle game on Roblox! Drag blocks, clear rows, and chain combos.</p>
-                  </div>
-              </Link>
-              
-              <Link href="/projects" className="carousel-card">
-                  <div className="card-img">
-                      <img src="https://tr.rbxcdn.com/180DAY-2cf83c4be47fff668ee9b719908ad473/500/280/Image/Jpeg/noFilter" alt="Better Music" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-                  </div>
-                  <div className="card-content">
-                      <h3 style={{ color: 'var(--secondary-green)' }}>Better Music</h3>
-                      <p>Fight for your favorite song in this musical brawler!</p>
-                  </div>
-              </Link>
-              
-              <Link href="/projects" className="carousel-card">
-                  <div className="card-img">
-                      <img src="https://tr.rbxcdn.com/180DAY-02e3d0421fe9a64be34b56a13ff7d8d2/500/280/Image/Jpeg/noFilter" alt="My Pizza Shop" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-                  </div>
-                  <div className="card-content">
-                      <h3 style={{ color: '#6a7985' }}>🍕 My Pizza Shop</h3>
-                      <p>Build the pizza shop of your dreams! Make delicious pizzas, serve hungry customers, and hire workers.</p>
-                  </div>
-              </Link>
-
-              <Link href="/projects" className="carousel-card">
-                  <div className="card-img">
-                      <img src="https://tr.rbxcdn.com/180DAY-61976bdce1ddc5d265be77f1ed7cd433/500/280/Image/Jpeg/noFilter" alt="Choose A Song" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-                  </div>
-                  <div className="card-content">
-                      <h3 style={{ color: '#f57f17' }}>🎵 Choose A Song 🎵</h3>
-                      <p>Join the ultimate music showdown! Battle against other players to decide which song is better.</p>
-                  </div>
-              </Link>
-
-              <Link href="/projects" className="carousel-card">
-                  <div className="card-img">
-                      <img src="https://tr.rbxcdn.com/180DAY-649fa2ee7317bc92ff2f08eaa7c4d075/500/280/Image/Jpeg/noFilter" alt="Brainrot" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-                  </div>
-                  <div className="card-content">
-                      <h3 style={{ color: 'var(--secondary-green)' }}>[🗿] Be a Warrior for Brainrot!</h3>
-                      <p>Crash through massive pillars with your Giga-Hammer! Collect the legendary Brainrots for massive multipliers.</p>
-                  </div>
-              </Link>
-              
-              <Link href="/projects" className="carousel-card">
-                  <div className="card-img">
-                      <img src="https://tr.rbxcdn.com/180DAY-95cad273751f059fcf5d9820c14bb49a/500/280/Image/Jpeg/noFilter" alt="Lock & Launch" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-                  </div>
-                  <div className="card-content">
-                      <h3 style={{ color: '#6a7985' }}>🎮 Lock & Launch – Open Beta! 🚀</h3>
-                      <p>Jump into chaotic, cartoon-style missile battles where the goal is simple: hover, lock, and launch!</p>
-                  </div>
-              </Link>
+              {FEATURED_GAMES.map((game, idx) => (
+                  <Link href={game.link} className="carousel-card" key={idx}>
+                      <div className="card-img">
+                          <img src={game.image} alt={game.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                      </div>
+                      <div className="card-content">
+                          <h3 style={{ color: game.color }}>{game.title}</h3>
+                          <p>{game.description}</p>
+                      </div>
+                  </Link>
+              ))}
 
           </div>
           </div>
