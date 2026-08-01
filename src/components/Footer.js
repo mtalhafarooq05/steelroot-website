@@ -50,7 +50,7 @@ export default function Footer() {
           marginTop: '1rem',
           fontFamily: "'Nunito', sans-serif"
       }}>
-          &copy; {new Date().getFullYear()} Steel Root Studios. All rights reserved.
+          &copy; {new Date().getFullYear()} SteelRoot Studios. All rights reserved.
       </p>
     </footer>
   );
